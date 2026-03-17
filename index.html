@@ -245,6 +245,37 @@ body{background:#080c14;font-family:'Lato',sans-serif;min-height:100vh;overflow-
 .pun-examples{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px;}
 .pun-tag{padding:4px 11px;border-radius:100px;font-size:10px;font-family:‘Lato’,sans-serif;border:1px solid;}
 
+/* ── ARABIC TEXT ── */
+.arabic-text{font-family:‘EB Garamond’,serif;font-size:20px;color:rgba(255,215,0,0.75);line-height:1.8;text-align:right;direction:rtl;margin-bottom:6px;letter-spacing:.5px;}
+.arabic-sm{font-family:‘EB Garamond’,serif;font-size:17px;color:rgba(255,215,0,0.6);line-height:1.8;text-align:right;direction:rtl;margin-bottom:4px;}
+
+/* ── GLOSSARY ── */
+.gloss-search{width:100%;padding:12px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,215,0,0.15);border-radius:12px;color:#e8e0d0;font-family:‘Lato’,sans-serif;font-size:14px;outline:none;margin:16px 0;transition:border-color .2s ease;}
+.gloss-search:focus{border-color:rgba(255,215,0,0.35);}
+.gloss-search::placeholder{color:rgba(232,224,208,0.3);}
+.gloss-letter{font-size:9px;letter-spacing:4px;color:var(–gold-dim);font-family:‘Cinzel’,serif;padding:14px 0 8px;}
+.gloss-item{border-radius:14px;padding:14px 16px;margin-bottom:9px;background:var(–bg2);border:1px solid rgba(255,255,255,0.06);cursor:pointer;transition:all .2s ease;animation:fadeUp .4s ease both;}
+.gloss-item:hover{border-color:rgba(255,215,0,0.18);}
+.gloss-item.open{border-color:rgba(255,215,0,0.2);background:rgba(255,215,0,0.04);}
+.gloss-term-row{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.gloss-term{font-size:14px;font-family:‘Cinzel’,serif;font-weight:700;color:rgba(255,255,255,0.88);letter-spacing:.4px;}
+.gloss-arabic-term{font-size:16px;font-family:‘EB Garamond’,serif;color:rgba(255,215,0,0.55);direction:rtl;}
+.gloss-arrow{font-size:12px;color:var(–text-dim);transition:transform .3s ease;flex-shrink:0;}
+.gloss-item.open .gloss-arrow{transform:rotate(180deg);}
+.gloss-body{display:none;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06);}
+.gloss-item.open .gloss-body{display:block;animation:expandDown .3s ease both;}
+.gloss-transliteration{font-size:11px;color:var(–gold-dim);letter-spacing:2px;font-family:‘Cinzel’,serif;margin-bottom:6px;}
+.gloss-definition{font-family:‘EB Garamond’,serif;font-size:14px;line-height:1.75;color:var(–text);}
+.gloss-ref{font-size:10px;color:var(–text-dim);letter-spacing:1px;margin-top:6px;font-family:‘Lato’,sans-serif;}
+
+/* ── SOURCES ── */
+.sources-cat{font-size:9px;letter-spacing:4px;color:var(–gold-dim);font-family:‘Cinzel’,serif;padding:16px 0 10px;}
+.source-item{border-radius:14px;padding:14px 16px;margin-bottom:9px;background:var(–bg2);border:1px solid rgba(255,255,255,0.06);animation:fadeUp .4s ease both;}
+.source-title{font-size:13px;font-family:‘Cinzel’,serif;font-weight:700;color:rgba(255,255,255,0.85);letter-spacing:.3px;margin-bottom:4px;}
+.source-arabic{font-size:15px;font-family:‘EB Garamond’,serif;color:rgba(255,215,0,0.5);direction:rtl;text-align:right;margin-bottom:4px;}
+.source-detail{font-size:12px;color:var(–text-dim);font-family:‘EB Garamond’,serif;line-height:1.6;}
+.source-tag{display:inline-block;padding:2px 9px;border-radius:100px;font-size:9px;font-family:‘Cinzel’,serif;letter-spacing:1px;background:rgba(255,215,0,0.07);color:var(–gold-dim);border:1px solid rgba(255,215,0,0.15);margin-top:6px;}
+
 /* hidden class */
 .hidden{display:none!important;}
 </style>
@@ -275,6 +306,7 @@ body{background:#080c14;font-family:'Lato',sans-serif;min-height:100vh;overflow-
     <div class="hero-arabic">السابقون</div>
     <div class="hero-sub">THE FOREMOST BELIEVERS</div>
     <div class="hero-ayah">
+      <div class="arabic-text">وَالسَّابِقُونَ السَّابِقُونَ ۝ أُولَٰئِكَ الْمُقَرَّبُونَ ۝ فِي جَنَّاتِ النَّعِيمِ</div>
       "And the foremost — the foremost. Those are the ones brought near [to Allah] in the Gardens of Pleasure."
       <span class="hero-ayah-ref">Qur'an 56:10–12</span>
     </div>
@@ -291,6 +323,8 @@ body{background:#080c14;font-family:'Lato',sans-serif;min-height:100vh;overflow-
       <button class="nav-btn" onclick="showSection('qualities',this)">Qualities</button>
       <button class="nav-btn" onclick="showSection('depth',this)">Depth</button>
       <button class="nav-btn" onclick="showSection('path',this)">The Path</button>
+      <button class="nav-btn" onclick="showSection('glossary',this)">Glossary</button>
+      <button class="nav-btn" onclick="showSection('sources',this)">Sources</button>
     </div>
   </nav>
 
@@ -1169,6 +1203,125 @@ body{background:#080c14;font-family:'Lato',sans-serif;min-height:100vh;overflow-
 
   </div>
 
+  <!-- ══════════════════════════════════════════ -->
+
+  <!-- SECTION: GLOSSARY -->
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <div class="section" id="sec-glossary">
+    <p class="sec-intro">Key Islamic terms used throughout this guide — with Arabic script, transliteration, and clear definitions.</p>
+
+```
+<input class="gloss-search" type="text" placeholder="🔍  Search a term..." oninput="filterGlossary(this.value)" />
+
+<div id="glossaryList"></div>
+```
+
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <!-- SECTION: SOURCES -->
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <div class="section" id="sec-sources">
+    <p class="sec-intro">All content in this guide is based exclusively on the Qur'an and authenticated Sunnah. Below are the primary sources referenced.</p>
+    <div class="divider"></div>
+
+```
+<div class="sources-cat">THE QUR'AN</div>
+
+<div class="source-item" style="animation-delay:.05s">
+  <div class="source-arabic">سُورَةُ الْفَاتِحَة — سُورَةُ الْفَلَق</div>
+  <div class="source-title">The Noble Qur'an</div>
+  <div class="source-detail">The primary and supreme source. All Qur'anic verses cited are from the original Arabic with standard transliteration. Key surahs referenced include: Al-Baqarah (2), Āl 'Imrān (3), An-Nisā' (4), Al-An'ām (6), Yūsuf (12), Al-Ra'd (13), Fāṭir (35), Yā-Sīn (36), Al-Wāqi'ah (56), Al-Ḥadīd (57), Al-Qiyāmah (75), Al-Inshiqāq (84), Al-Fajr (89), Al-'Aṣr (103).</div>
+  <span class="source-tag">PRIMARY SOURCE</span>
+</div>
+
+<div class="sources-cat">ḤADĪTH COLLECTIONS</div>
+
+<div class="source-item" style="animation-delay:.1s">
+  <div class="source-arabic">صَحِيحُ الْبُخَارِي</div>
+  <div class="source-title">Ṣaḥīḥ al-Bukhārī</div>
+  <div class="source-detail">Compiled by Imam Muḥammad ibn Ismā'īl al-Bukhārī (d. 256 AH). The most authentic collection of hadith after the Qur'an according to the consensus of scholars. Referenced for: trials expiating sins, grave punishment, Day of Judgment reckoning, the 70,000 entering Paradise without reckoning, mustard seed of faith hadith, Qanṭarah bridge.</div>
+  <span class="source-tag">ṢAḤĪḤ</span>
+</div>
+
+<div class="source-item" style="animation-delay:.15s">
+  <div class="source-arabic">صَحِيحُ مُسْلِم</div>
+  <div class="source-title">Ṣaḥīḥ Muslim</div>
+  <div class="source-detail">Compiled by Imam Muslim ibn al-Ḥajjāj al-Naysābūrī (d. 261 AH). The second most authentic hadith collection. Referenced for: definition of iḥsān (the Jibrīl hadith), controlling anger, charity not decreasing wealth, consistent small deeds, Allah's mercy surpassing His wrath.</div>
+  <span class="source-tag">ṢAḤĪḤ</span>
+</div>
+
+<div class="source-item" style="animation-delay:.2s">
+  <div class="source-arabic">سُنَنُ التِّرْمِذِي</div>
+  <div class="source-title">Jāmi' al-Tirmidhī</div>
+  <div class="source-detail">Compiled by Imam Muḥammad ibn 'Īsā al-Tirmidhī (d. 279 AH). Referenced for: the intelligent person subjugating his soul, leaving doubtful matters, son of Adam filling no vessel worse than his stomach.</div>
+  <span class="source-tag">ḤASAN / ṢAḤĪḤ</span>
+</div>
+
+<div class="source-item" style="animation-delay:.25s">
+  <div class="source-arabic">سُنَنُ ابْنِ مَاجَه</div>
+  <div class="source-title">Sunan Ibn Mājah</div>
+  <div class="source-detail">Compiled by Imam Muḥammad ibn Yazīd Ibn Mājah (d. 273 AH). Referenced for: dhikr being the best of deeds.</div>
+  <span class="source-tag">VERIFIED</span>
+</div>
+
+<div class="source-item" style="animation-delay:.3s">
+  <div class="source-arabic">مُسْنَدُ أَحْمَد</div>
+  <div class="source-title">Musnad Aḥmad</div>
+  <div class="source-detail">Compiled by Imam Aḥmad ibn Ḥanbal (d. 241 AH). Referenced for: suppressing anger and Allah concealing faults.</div>
+  <span class="source-tag">VERIFIED</span>
+</div>
+
+<div class="sources-cat">CLASSICAL SCHOLARLY WORKS</div>
+
+<div class="source-item" style="animation-delay:.35s">
+  <div class="source-arabic">إِحْيَاءُ عُلُومِ الدِّين</div>
+  <div class="source-title">Iḥyā' 'Ulūm al-Dīn</div>
+  <div class="source-detail">By Imam Abū Ḥāmid al-Ghazālī (d. 505 AH). The landmark work on Islamic spirituality. Foundational for the understanding of the Nafs, its stages, spiritual diseases and their cures, and the path to Iḥsān.</div>
+  <span class="source-tag">CLASSICAL</span>
+</div>
+
+<div class="source-item" style="animation-delay:.4s">
+  <div class="source-arabic">مَدَارِجُ السَّالِكِين</div>
+  <div class="source-title">Madārij al-Sālikīn</div>
+  <div class="source-detail">By Imam Ibn al-Qayyim al-Jawziyyah (d. 751 AH). A detailed commentary on the stations of the spiritual journey. Key reference for the levels of the nafs, tawbah, tawakkul, and the concept of Ṣiddīqiyyah.</div>
+  <span class="source-tag">CLASSICAL</span>
+</div>
+
+<div class="source-item" style="animation-delay:.45s">
+  <div class="source-arabic">تَفْسِيرُ ابْنِ كَثِير</div>
+  <div class="source-title">Tafsīr Ibn Kathīr</div>
+  <div class="source-detail">By Imam Ismā'īl ibn Kathīr (d. 774 AH). The most widely referenced classical Qur'an commentary (tafsīr). Used for explanation of Qur'an 35:32 (the three categories of believers), 56:10–12 (the Sābiqūn), and 89:27–30 (the Muṭma'innah soul).</div>
+  <span class="source-tag">CLASSICAL</span>
+</div>
+
+<div class="source-item" style="animation-delay:.5s">
+  <div class="source-arabic">تَفْسِيرُ الطَّبَرِي</div>
+  <div class="source-title">Tafsīr al-Ṭabarī</div>
+  <div class="source-detail">By Imam Muḥammad ibn Jarīr al-Ṭabarī (d. 310 AH). The earliest and most comprehensive classical tafsīr. Referenced for scholarly opinions on the three categories in Sūrah Fāṭir.</div>
+  <span class="source-tag">CLASSICAL</span>
+</div>
+
+<div class="source-item" style="animation-delay:.55s">
+  <div class="source-arabic">رِيَاضُ الصَّالِحِين</div>
+  <div class="source-title">Riyāḍ al-Ṣāliḥīn</div>
+  <div class="source-detail">By Imam Yaḥyā ibn Sharaf al-Nawawī (d. 676 AH). A comprehensive hadith compilation focused on righteous character and deeds. Referenced for numerous hadith on character, worship, and daily conduct of the believer.</div>
+  <span class="source-tag">CLASSICAL</span>
+</div>
+
+<div style="background:rgba(255,215,0,0.03);border:1px solid rgba(255,215,0,0.1);border-radius:14px;padding:16px 18px;margin:8px 0 24px;text-align:center;">
+  <div style="font-size:9px;letter-spacing:3px;color:var(--gold-dim);font-family:'Cinzel',serif;margin-bottom:8px;">NOTE ON AUTHENTICITY</div>
+  <p style="font-family:'EB Garamond',serif;font-size:13px;color:var(--text-dim);line-height:1.75;">All hadith cited in this guide are from authenticated (ṣaḥīḥ or ḥasan) sources. No weak (ḍa'īf) or fabricated (mawḍū') narrations have been used. Where scholars differ on a ruling or interpretation, the majority scholarly position has been presented.</p>
+</div>
+```
+
+  </div>
+
   <!-- FOOTER -->
 
   <div class="footer">
@@ -1311,10 +1464,78 @@ function showSection(id, btn){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
+/* ── GLOSSARY DATA ── */
+const GLOSSARY = [
+  { term:'Sābiqūn', arabic:'السابقون', translit:'As-Sābiqūn', def:'The foremost believers — those who race ahead in good deeds and are brought closest to Allah in the Hereafter. The highest category of believers mentioned in Qur\'an 35:32 and 56:10.', ref:'Qur\'an 35:32, 56:10–12' },
+  { term:'Tawḥīd', arabic:'التوحيد', translit:'At-Tawḥīd', def:'The absolute oneness of Allah. The foundation of all Islamic belief — that Allah alone deserves worship, has no partners, no equals, and no rivals. The first and most essential condition of faith.', ref:'Qur\'an 112; Bukhārī & Muslim' },
+  { term:'Taqwā', arabic:'التقوى', translit:'At-Taqwā', def:'God-consciousness; a protective shield created by awareness of Allah. It means being conscious of Allah at all times — in public and private — and acting accordingly. Often translated as piety or fear of Allah, but deeper than both.', ref:'Qur\'an 2:177, 49:13' },
+  { term:'Nafs', arabic:'النفس', translit:'An-Nafs', def:'The self or soul. In Islamic spirituality, the nafs is the inner dimension of the human being — the seat of desires, will, and character. It passes through stages: from commanding evil (Ammārah) to being at peace with Allah (Muṭma\'innah).', ref:'Qur\'an 12:53, 75:2, 89:27' },
+  { term:'Nafs al-Ammārah', arabic:'النفس الأمارة', translit:'An-Nafs al-Ammārah', def:'The soul that persistently commands toward evil. The raw, untrained state of the nafs dominated by desires and impulses. Mentioned by Prophet Yūsuf ﷺ in the Qur\'an.', ref:'Qur\'an 12:53' },
+  { term:'Nafs al-Lawwāmah', arabic:'النفس اللوامة', translit:'An-Nafs al-Lawwāmah', def:'The self-reproaching soul. A soul that sins but then blames itself with guilt and regret. It is in a constant inner battle. Allah swears by this soul in the Qur\'an — a sign of its honour.', ref:'Qur\'an 75:2' },
+  { term:'Nafs al-Muṭma\'innah', arabic:'النفس المطمئنة', translit:'An-Nafs al-Muṭma\'innah', def:'The soul at complete peace and rest in Allah. The highest stage — desires are aligned with obedience, inner war is over. Allah addresses this soul directly at death with honour and love.', ref:'Qur\'an 89:27–30' },
+  { term:'Tawbah', arabic:'التوبة', translit:'At-Tawbah', def:'Repentance. Returning to Allah after a sin with genuine remorse, stopping the sin, and resolving not to return. One of the most beloved acts to Allah. Not a one-time act but a continuous way of life for the believer.', ref:'Qur\'an 2:222, 3:135' },
+  { term:'Iḥsān', arabic:'الإحسان', translit:'Al-Iḥsān', def:'Excellence and perfection in worship and conduct. Defined by the Prophet ﷺ as: "To worship Allah as if you see Him, and if you cannot see Him, know that He sees you." The highest level of worship quality.', ref:'Muslim — Ḥadīth Jibrīl' },
+  { term:'Khushū\'', arabic:'الخشوع', translit:'Al-Khushū\'', def:'Humility, focus, and presence of heart in prayer. The soul of ṣalāh — without it, prayer is mere physical movement. With it, prayer becomes a true conversation with Allah.', ref:'Qur\'an 23:1–2' },
+  { term:'Dhikr', arabic:'الذكر', translit:'Adh-Dhikr', def:'Remembrance of Allah through words, phrases, and reflection. The nourishment of the heart. Allah says hearts find rest in His remembrance. Includes tasbīḥ, taḥmīd, takbīr, and recitation of Qur\'an.', ref:'Qur\'an 13:28' },
+  { term:'Zālim li-Nafsih', arabic:'ظالم لنفسه', translit:'Ẓālim li-Nafsih', def:'One who wrongs their own soul. The first of three categories of believers in Qur\'an 35:32. A sinning believer who falls short — but remains within the fold of Islam and is still chosen by Allah.', ref:'Qur\'an 35:32' },
+  { term:'Muqtaṣid', arabic:'المقتصد', translit:'Al-Muqtaṣid', def:'The moderate or balanced believer. Fulfils obligations, avoids major sins, but does not strive for extra excellence. The second category in Qur\'an 35:32. Generally receives an easy reckoning and enters Paradise.', ref:'Qur\'an 35:32, 84:7–8' },
+  { term:'Ṣāliḥ', arabic:'الصالح', translit:'Aṣ-Ṣāliḥ', def:'The righteous person. One who fulfils obligations and avoids the prohibited. The foundational level of spiritual life — honest, upright, consistent in worship. The first rung of the spiritual depth ladder.', ref:'Qur\'an 4:69' },
+  { term:'Muttaqī', arabic:'المتقي', translit:'Al-Muttaqī', def:'The God-fearing person — one who possesses taqwā. Goes beyond outward compliance to develop deep internal consciousness of Allah. Avoids not just the ḥarām but doubtful matters (shubuhāt).', ref:'Qur\'an 2:177, 3:133' },
+  { term:'Muḥsin', arabic:'المحسن', translit:'Al-Muḥsin', def:'One who practices Iḥsān — excellence in worship and character. Brings beauty and perfection into every act. Worships as if seeing Allah. The third rung of the spiritual depth ladder.', ref:'Qur\'an 2:195; Muslim' },
+  { term:'Ṣiddīq', arabic:'الصديق', translit:'Aṣ-Ṣiddīq', def:'The truthful master — the highest rank below Prophethood. One whose inner and outer reality are completely aligned with faith. No gap between claim and lived reality. The greatest example is Abū Bakr aṣ-Ṣiddīq ؓ.', ref:'Qur\'an 4:69' },
+  { term:'Shirk', arabic:'الشرك', translit:'Ash-Shirk', def:'Associating partners with Allah in worship. The gravest sin in Islam and the only sin Allah may not forgive if one dies upon it. Directly opposed to Tawḥīd.', ref:'Qur\'an 4:48, 4:116' },
+  { term:'Ḥisāb', arabic:'الحساب', translit:'Al-Ḥisāb', def:'The reckoning on the Day of Judgment. Deeds are presented and weighed. There are two types: a light presenting (ʿarḍ) with forgiveness, or a strict questioning (munāqasha) which is itself a punishment.', ref:'Qur\'an 84:7–9; Bukhārī' },
+  { term:'\'Adhāb al-Qabr', arabic:'عذاب القبر', translit:'\'Adhāb al-Qabr', def:'Punishment in the grave. A reality established in authentic hadith. Some believers may face punishment in the grave for certain sins before the Day of Judgment. The grave is either a garden of Paradise or a pit of Hell.', ref:'Bukhārī' },
+  { term:'Qanṭarah', arabic:'القنطرة', translit:'Al-Qanṭarah', def:'The bridge between Paradise and Hell where believers who have crossed the Ṣirāṭ settle mutual injustices before entering Jannah. Rights of people must be settled here with deeds as currency.', ref:'Bukhārī' },
+  { term:'Ṣirāṭ', arabic:'الصراط', translit:'Aṣ-Ṣirāṭ', def:'The bridge over Hellfire that all people must cross on the Day of Judgment. Believers cross at speeds according to their deeds. Some cross like lightning, others stumble and fall.', ref:'Bukhārī & Muslim' },
+  { term:'Nawāfil', arabic:'النوافل', translit:'An-Nawāfil', def:'Voluntary acts of worship performed beyond the obligatory. Includes voluntary prayers (like Tahajjud), voluntary fasting, extra charity, and additional Qur\'an recitation. The means by which the believer draws closest to Allah.', ref:'Bukhārī — Ḥadīth Qudsī' },
+  { term:'Tahajjud', arabic:'التهجد', translit:'At-Tahajjud', def:'The voluntary night prayer, performed after sleeping and before Fajr. One of the greatest acts of worship — a time of special closeness to Allah and answered supplications.', ref:'Qur\'an 17:79; Bukhārī' },
+  { term:'Tadabbur', arabic:'التدبر', translit:'At-Tadabbur', def:'Deep reflection and pondering of the Qur\'an\'s meanings. Going beyond mere recitation to allow the Qur\'an to speak to one\'s life, reshape one\'s worldview, and purify the heart.', ref:'Qur\'an 4:82, 47:24' },
+  { term:'Riyā\'', arabic:'الرياء', translit:'Ar-Riyā\'', def:'Showing off acts of worship to gain praise from people. A form of hidden shirk (minor shirk) that nullifies the reward of deeds. The Prophet ﷺ described it as the most feared thing for his Ummah.', ref:'Qur\'an 107:4–6' },
+  { term:'Tawakkul', arabic:'التوكل', translit:'At-Tawakkul', def:'Complete reliance and trust in Allah after taking the necessary means. Not passivity, but the conviction that outcomes belong to Allah alone. A sign of deep faith and a quality of the Sābiqūn.', ref:'Qur\'an 65:3; Tirmidhī' },
+  { term:'Isrāf', arabic:'الإسراف', translit:'Al-Isrāf', def:'Excess and extravagance — in food, spending, speech, or any act. Condemned in the Qur\'an. The Sābiqūn live with intentional simplicity, knowing excess dulls the heart and feeds the nafs.', ref:'Qur\'an 7:31' },
+  { term:'Ghaybah', arabic:'الغيبة', translit:'Al-Ghībah', def:'Backbiting — mentioning something about a person in their absence that they would dislike, even if true. A major sin that causes punishment in the grave and is likened to eating the flesh of a dead brother.', ref:'Qur\'an 49:12' },
+  { term:'Namīmah', arabic:'النميمة', translit:'An-Namīmah', def:'Tale-bearing or spreading gossip between people to cause discord. Mentioned in hadith as one of the causes of punishment in the grave. A serious sin of the tongue.', ref:'Bukhārī' },
+];
+
+function renderGlossary(filter=''){
+  const list = document.getElementById('glossaryList');
+  const filtered = filter
+    ? GLOSSARY.filter(g => g.term.toLowerCase().includes(filter.toLowerCase()) || g.arabic.includes(filter) || g.translit.toLowerCase().includes(filter.toLowerCase()))
+    : GLOSSARY;
+
+  // Sort alphabetically
+  const sorted = [...filtered].sort((a,b)=>a.term.localeCompare(b.term));
+
+  if(sorted.length===0){
+    list.innerHTML='<p style="text-align:center;color:var(--text-dim);font-family:\'EB Garamond\',serif;font-size:15px;padding:20px 0;">No terms found.</p>';
+    return;
+  }
+
+  list.innerHTML = sorted.map((g,i)=>`
+    <div class="gloss-item" id="gl-${i}" onclick="toggleCard('gl-${i}')" style="animation-delay:${i*0.03}s">
+      <div class="gloss-term-row">
+        <span class="gloss-term">${g.term}</span>
+        <span class="gloss-arabic-term">${g.arabic}</span>
+        <span class="gloss-arrow">⌄</span>
+      </div>
+      <div class="gloss-body">
+        <div class="gloss-transliteration">${g.translit}</div>
+        <div class="gloss-definition">${g.def}</div>
+        <div class="gloss-ref">📖 ${g.ref}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterGlossary(val){
+  renderGlossary(val);
+}
+
 // INIT
 renderQualities('all');
+renderGlossary();
 </script>
 
 </body>
 </html>
- 
