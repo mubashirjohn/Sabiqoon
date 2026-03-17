@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Sābiqūn — The Foremost Believers</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:#080c14;font-family:'Lato',sans-serif;min-height:100vh;overflow-x:hidden;-webkit-tap-highlight-color:transparent;color:#e8e0d0;}
+
+:root{
+–gold:#FFD700;
+–gold-dim:rgba(255,215,0,0.45);
+–gold-faint:rgba(255,215,0,0.1);
+–bg:#080c14;
+–bg2:#0e1420;
+–bg3:#141a26;
+–text:rgba(232,224,208,0.85);
+–text-dim:rgba(232,224,208,0.42);
+–border:rgba(255,215,0,0.1);
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes shimmer{0%{background-position:-300% center;}100%{background-position:300% center;}}
+@keyframes pulse{0%,100%{opacity:.3;}50%{opacity:.8;}}
+@keyframes expandDown{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:translateY(0);}}
+@keyframes starFloat{0%,100%{transform:translateY(0px) rotate(0deg);}50%{transform:translateY(-6px) rotate(5deg);}}
+@keyframes borderGlow{0%,100%{border-color:rgba(255,215,0,0.1);}50%{border-color:rgba(255,215,0,0.35);}}
+
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-thumb{background:rgba(255,215,0,0.18);border-radius:2px;}
+
+/* ── LAYOUT ── */
+.wrap{max-width:440px;margin:0 auto;min-height:100vh;position:relative;}
+
+/* ── BACKGROUND ELEMENTS ── */
+.bg-geo{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:0;overflow:hidden;}
+.geo-ring{position:absolute;border-radius:50%;border:1px solid rgba(255,215,0,0.04);}
+.geo-ring:nth-child(1){width:600px;height:600px;top:-200px;right:-200px;}
+.geo-ring:nth-child(2){width:400px;height:400px;bottom:-150px;left:-150px;}
+.geo-ring:nth-child(3){width:250px;height:250px;top:40%;left:50%;transform:translate(-50%,-50%);}
+.orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;}
+.orb1{width:380px;height:380px;top:-100px;right:-120px;background:radial-gradient(circle,rgba(255,215,0,0.045) 0%,transparent 70%);}
+.orb2{width:460px;height:460px;bottom:-160px;left:-140px;background:radial-gradient(circle,rgba(120,60,0,0.07) 0%,transparent 70%);}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:100;background:rgba(8,12,20,0.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(–border);padding:0 20px;}
+.nav-inner{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;}
+.nav-inner::-webkit-scrollbar{display:none;}
+.nav-btn{flex-shrink:0;padding:14px 14px;font-family:‘Cinzel’,serif;font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(–text-dim);background:transparent;border:none;cursor:pointer;transition:color .25s ease;white-space:nowrap;position:relative;}
+.nav-btn::after{content:’’;position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(–gold);border-radius:2px 2px 0 0;transform:scaleX(0);transition:transform .25s ease;}
+.nav-btn.active{color:var(–gold);}
+.nav-btn.active::after{transform:scaleX(1);}
+
+/* ── HERO ── */
+.hero{padding:52px 28px 36px;text-align:center;position:relative;z-index:1;animation:fadeUp .7s ease both;}
+.hero-ornament{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:16px;}
+.orn-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.25),transparent);}
+.orn-star{font-size:14px;color:rgba(255,215,0,0.35);animation:starFloat 4s ease-in-out infinite;}
+.hero-eyebrow{font-size:9px;letter-spacing:6px;color:var(–gold-dim);font-family:‘Cinzel’,serif;font-weight:600;margin-bottom:10px;text-transform:uppercase;}
+.hero-title{font-size:50px;font-family:‘Cinzel’,serif;font-weight:900;background:linear-gradient(135deg,#8B6914 0%,#D4A017 20%,#FFD700 45%,#FFF8DC 55%,#FFD700 75%,#C8860A 100%);background-size:250% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 5s linear infinite;line-height:1;margin-bottom:8px;}
+.hero-arabic{font-size:22px;color:rgba(255,215,0,0.3);margin-bottom:10px;font-family:‘EB Garamond’,serif;letter-spacing:4px;}
+.hero-sub{font-size:12px;color:var(–text-dim);letter-spacing:3px;margin-bottom:24px;}
+.hero-ayah{background:rgba(255,215,0,0.04);border:1px solid rgba(255,215,0,0.12);border-radius:14px;padding:16px 20px;font-family:‘EB Garamond’,serif;font-style:italic;font-size:15px;color:var(–text);line-height:1.7;}
+.hero-ayah-ref{display:block;font-family:‘Lato’,sans-serif;font-style:normal;font-size:10px;color:var(–gold-dim);letter-spacing:2px;margin-top:8px;text-align:right;}
+
+/* ── SECTION ── */
+.section{padding:0 20px;position:relative;z-index:1;display:none;}
+.section.active{display:block;}
+
+/* ── LEVELS SECTION ── */
+.levels-intro{font-size:13px;color:var(–text-dim);line-height:1.8;padding:20px 0 6px;text-align:center;}
+
+.level-card{border-radius:20px;margin-bottom:16px;overflow:hidden;cursor:pointer;animation:fadeUp .5s ease both;}
+.level-card-header{padding:20px 20px 16px;display:flex;align-items:center;gap:16px;position:relative;}
+.level-num{font-size:10px;font-family:‘Cinzel’,serif;font-weight:700;letter-spacing:3px;color:var(–text-dim);}
+.level-icon-circle{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;border:1px solid;}
+.level-text{flex:1;}
+.level-title{font-size:17px;font-family:‘Cinzel’,serif;font-weight:800;letter-spacing:.5px;margin-bottom:3px;}
+.level-subtitle{font-size:11px;color:var(–text-dim);letter-spacing:1px;}
+.level-arabic{font-size:14px;font-family:‘EB Garamond’,serif;color:var(–text-dim);margin-top:2px;}
+.level-arrow{font-size:16px;color:var(–text-dim);transition:transform .3s ease,color .3s ease;}
+.level-card.open .level-arrow{transform:rotate(180deg);}
+
+.level-body{display:none;padding:0 20px 20px;}
+.level-card.open .level-body{display:block;animation:expandDown .3s ease both;}
+.level-desc{font-family:‘EB Garamond’,serif;font-size:15px;line-height:1.8;color:var(–text);margin-bottom:14px;}
+.level-traits{display:flex;flex-wrap:wrap;gap:8px;}
+.trait-tag{padding:5px 12px;border-radius:100px;font-size:11px;font-family:‘Cinzel’,serif;letter-spacing:.8px;border:1px solid;}
+
+/* ── QUALITIES SECTION ── */
+.qualities-intro{font-size:13px;color:var(–text-dim);line-height:1.8;padding:20px 0 10px;text-align:center;}
+.quality-item{border-radius:16px;margin-bottom:12px;cursor:pointer;animation:fadeUp .4s ease both;overflow:hidden;}
+.q-header{display:flex;align-items:center;gap:14px;padding:16px 18px;}
+.q-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:rgba(255,215,0,0.07);border:1px solid rgba(255,215,0,0.15);}
+.q-label{flex:1;}
+.q-title{font-size:14px;font-family:‘Cinzel’,serif;font-weight:700;color:rgba(255,255,255,0.88);letter-spacing:.4px;}
+.q-cat{font-size:10px;color:var(–gold-dim);letter-spacing:2px;margin-top:3px;}
+.q-arrow{font-size:13px;color:var(–text-dim);transition:transform .3s ease;}
+.quality-item.open .q-arrow{transform:rotate(180deg);}
+.q-body{display:none;padding:0 18px 18px;}
+.quality-item.open .q-body{display:block;animation:expandDown .3s ease both;}
+.q-desc{font-family:‘EB Garamond’,serif;font-size:15px;line-height:1.85;color:var(–text);margin-bottom:12px;}
+.q-hadith{background:rgba(255,215,0,0.04);border-left:2px solid rgba(255,215,0,0.3);padding:12px 14px;border-radius:0 10px 10px 0;font-family:‘EB Garamond’,serif;font-style:italic;font-size:14px;color:rgba(232,224,208,0.7);line-height:1.7;}
+.q-hadith-ref{display:block;font-style:normal;font-size:10px;color:var(–gold-dim);letter-spacing:2px;margin-top:6px;}
+
+/* ── CAT FILTER ── */
+.cat-filter{display:flex;gap:8px;overflow-x:auto;padding:14px 0 16px;scrollbar-width:none;}
+.cat-filter::-webkit-scrollbar{display:none;}
+.filter-btn{flex-shrink:0;padding:7px 14px;border-radius:100px;font-size:10px;font-family:‘Cinzel’,serif;letter-spacing:1px;font-weight:700;border:1px solid rgba(255,255,255,0.12);background:transparent;color:var(–text-dim);cursor:pointer;transition:all .2s ease;}
+.filter-btn.active{background:rgba(255,215,0,0.1);color:var(–gold);border-color:rgba(255,215,0,0.3);}
+
+/* ── DEPTH SECTION ── */
+.depth-intro{font-size:13px;color:var(–text-dim);line-height:1.8;padding:20px 0 10px;text-align:center;}
+.depth-ladder{position:relative;padding:10px 0 20px;}
+.depth-line{position:absolute;left:34px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,rgba(255,215,0,0.2),rgba(255,215,0,0.2),transparent);}
+.depth-step{display:flex;gap:18px;align-items:flex-start;margin-bottom:6px;cursor:pointer;animation:fadeUp .5s ease both;}
+.depth-node{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,215,0,0.25);background:var(–bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:12px;transition:all .3s ease;position:relative;z-index:1;}
+.depth-step.open .depth-node{background:rgba(255,215,0,0.12);border-color:var(–gold);box-shadow:0 0 14px rgba(255,215,0,0.3);}
+.depth-node-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,215,0,0.3);transition:all .3s ease;}
+.depth-step.open .depth-node-dot{background:var(–gold);}
+.depth-content{flex:1;border-radius:16px;padding:14px 16px;background:var(–bg2);border:1px solid rgba(255,255,255,0.06);transition:all .3s ease;}
+.depth-step.open .depth-content{background:rgba(255,215,0,0.04);border-color:rgba(255,215,0,0.18);}
+.depth-level-num{font-size:9px;letter-spacing:3px;color:var(–gold-dim);font-family:‘Cinzel’,serif;margin-bottom:4px;}
+.depth-name{font-size:16px;font-family:‘Cinzel’,serif;font-weight:800;color:rgba(255,255,255,0.85);}
+.depth-step.open .depth-name{color:var(–gold);}
+.depth-ar{font-size:13px;font-family:‘EB Garamond’,serif;color:var(–text-dim);margin-top:2px;margin-bottom:8px;}
+.depth-body{display:none;margin-top:10px;}
+.depth-step.open .depth-body{display:block;animation:expandDown .3s ease both;}
+.depth-body-text{font-family:‘EB Garamond’,serif;font-size:15px;line-height:1.8;color:var(–text);margin-bottom:10px;}
+.depth-signs{display:flex;flex-direction:column;gap:7px;}
+.depth-sign{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(–text-dim);line-height:1.5;}
+.depth-sign-dot{font-size:8px;color:var(–gold-dim);margin-top:5px;flex-shrink:0;}
+
+/* ── PATH SECTION ── */
+.path-intro{font-size:13px;color:var(–text-dim);line-height:1.8;padding:20px 0 10px;text-align:center;}
+.path-steps{padding:10px 0 20px;}
+.path-step{display:flex;gap:16px;margin-bottom:20px;animation:fadeUp .5s ease both;}
+.path-step-num{width:36px;height:36px;border-radius:50%;background:rgba(255,215,0,0.08);border:1px solid rgba(255,215,0,0.2);display:flex;align-items:center;justify-content:center;font-size:12px;font-family:‘Cinzel’,serif;font-weight:800;color:var(–gold);flex-shrink:0;margin-top:4px;}
+.path-step-body{flex:1;}
+.path-step-title{font-size:14px;font-family:‘Cinzel’,serif;font-weight:700;color:rgba(255,255,255,0.88);letter-spacing:.4px;margin-bottom:6px;}
+.path-step-desc{font-family:‘EB Garamond’,serif;font-size:14px;line-height:1.75;color:var(–text-dim);}
+.path-connector{width:1px;height:14px;background:rgba(255,215,0,0.15);margin-left:17px;margin-bottom:0;}
+
+/* ── FOOTER ── */
+.footer{padding:24px 20px 40px;text-align:center;position:relative;z-index:1;}
+.footer-ornament{font-size:12px;color:rgba(255,215,0,0.18);letter-spacing:8px;margin-bottom:10px;}
+.footer-text{font-size:10px;color:var(–text-dim);letter-spacing:2px;font-family:‘Cinzel’,serif;}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.12),transparent);margin:8px 0 20px;}
+
+/* ── NAFS SECTION ── */
+.nafs-intro{font-size:13px;color:var(–text-dim);line-height:1.8;padding:20px 0 6px;text-align:center;}
+.nafs-map{background:rgba(255,215,0,0.03);border:1px solid rgba(255,215,0,0.1);border-radius:16px;padding:16px 18px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-around;gap:6px;}
+.nafs-map-item{text-align:center;flex:1;}
+.nafs-map-label{font-size:9px;font-family:‘Cinzel’,serif;letter-spacing:1.5px;color:var(–text-dim);margin-bottom:4px;}
+.nafs-map-val{font-size:11px;font-family:‘Cinzel’,serif;font-weight:700;}
+.nafs-map-arrow{font-size:18px;color:rgba(255,215,0,0.2);flex-shrink:0;}
+.nafs-card{border-radius:22px;margin-bottom:18px;overflow:hidden;cursor:pointer;animation:fadeUp .5s ease both;position:relative;}
+.nafs-card-glow{position:absolute;top:0;left:0;right:0;height:2px;border-radius:22px 22px 0 0;}
+.nafs-header{padding:22px 20px 18px;display:flex;gap:16px;align-items:center;}
+.nafs-symbol{width:58px;height:58px;border-radius:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;}
+.nafs-symbol-inner{font-size:26px;line-height:1;}
+.nafs-info{flex:1;}
+.nafs-stage{font-size:9px;letter-spacing:3px;font-family:‘Cinzel’,serif;font-weight:700;margin-bottom:4px;}
+.nafs-name{font-size:18px;font-family:‘Cinzel’,serif;font-weight:900;letter-spacing:.5px;line-height:1.1;margin-bottom:3px;}
+.nafs-arabic{font-size:15px;font-family:‘EB Garamond’,serif;color:var(–text-dim);margin-bottom:2px;}
+.nafs-sub{font-size:11px;color:var(–text-dim);letter-spacing:1px;}
+.nafs-arrow{font-size:16px;color:var(–text-dim);transition:transform .3s ease;align-self:center;}
+.nafs-card.open .nafs-arrow{transform:rotate(180deg);}
+.nafs-body{display:none;padding:0 20px 22px;}
+.nafs-card.open .nafs-body{display:block;animation:expandDown .35s ease both;}
+.nafs-ayah{border-radius:12px;padding:14px 16px;margin-bottom:14px;font-family:‘EB Garamond’,serif;font-style:italic;font-size:15px;line-height:1.75;color:var(–text);}
+.nafs-ayah-ref{display:block;font-style:normal;font-size:10px;letter-spacing:2px;margin-top:7px;text-align:right;font-family:‘Lato’,sans-serif;}
+.nafs-desc{font-family:‘EB Garamond’,serif;font-size:15px;line-height:1.85;color:var(–text);margin-bottom:14px;}
+.nafs-signs-title{font-size:9px;letter-spacing:3px;font-family:‘Cinzel’,serif;color:var(–text-dim);margin-bottom:10px;}
+.nafs-signs{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+.nafs-sign{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;}
+.nafs-sign-icon{font-size:13px;flex-shrink:0;margin-top:1px;}
+.nafs-sign-text{font-size:13px;line-height:1.55;color:var(–text-dim);}
+.nafs-link{border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:10px;}
+.nafs-link-label{font-size:10px;letter-spacing:2px;font-family:‘Cinzel’,serif;}
+.nafs-link-val{font-size:13px;font-family:‘Cinzel’,serif;font-weight:700;}
+
+/* ── SALVATION & ACCOUNTABILITY SHARED ── */
+.sec-intro{font-size:13px;color:var(–text-dim);line-height:1.8;padding:20px 0 6px;text-align:center;}
+.salv-card{border-radius:20px;margin-bottom:14px;overflow:hidden;cursor:pointer;animation:fadeUp .45s ease both;}
+.salv-header{display:flex;align-items:center;gap:14px;padding:18px 18px;}
+.salv-num{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;font-family:‘Cinzel’,serif;font-weight:900;flex-shrink:0;}
+.salv-label{flex:1;}
+.salv-title{font-size:14px;font-family:‘Cinzel’,serif;font-weight:700;color:rgba(255,255,255,0.88);letter-spacing:.4px;}
+.salv-sub{font-size:10px;color:var(–text-dim);letter-spacing:1.5px;margin-top:3px;}
+.salv-arrow{font-size:14px;color:var(–text-dim);transition:transform .3s ease;}
+.salv-card.open .salv-arrow{transform:rotate(180deg);}
+.salv-body{display:none;padding:0 18px 18px;}
+.salv-card.open .salv-body{display:block;animation:expandDown .3s ease both;}
+.salv-desc{font-family:‘EB Garamond’,serif;font-size:15px;line-height:1.85;color:var(–text);margin-bottom:12px;}
+.salv-ayah{border-left:2px solid rgba(255,215,0,0.3);padding:11px 14px;border-radius:0 10px 10px 0;background:rgba(255,215,0,0.04);font-family:‘EB Garamond’,serif;font-style:italic;font-size:14px;color:rgba(232,224,208,0.72);line-height:1.7;margin-bottom:10px;}
+.salv-ayah-ref{display:block;font-style:normal;font-size:10px;color:var(–gold-dim);letter-spacing:2px;margin-top:6px;font-family:‘Lato’,sans-serif;}
+.salv-list{display:flex;flex-direction:column;gap:7px;margin-bottom:12px;}
+.salv-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);}
+.salv-item-icon{font-size:13px;flex-shrink:0;margin-top:1px;}
+.salv-item-text{font-size:13px;line-height:1.55;color:var(–text-dim);}
+
+/* Bar visual */
+.bar-visual{border-radius:18px;padding:20px;margin-bottom:18px;position:relative;overflow:hidden;}
+.bar-visual-title{font-size:9px;letter-spacing:4px;font-family:‘Cinzel’,serif;margin-bottom:14px;text-align:center;}
+.bar-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.bar-row:last-child{margin-bottom:0;}
+.bar-row-label{font-size:11px;font-family:‘Cinzel’,serif;font-weight:700;width:90px;flex-shrink:0;letter-spacing:.5px;}
+.bar-track{flex:1;height:8px;border-radius:100px;background:rgba(255,255,255,0.06);overflow:hidden;}
+.bar-prog{height:100%;border-radius:100px;}
+.bar-row-tag{font-size:9px;font-family:‘Cinzel’,serif;letter-spacing:1px;padding:3px 8px;border-radius:100px;flex-shrink:0;}
+
+/* Comparison table */
+.comp-table{border-radius:16px;overflow:hidden;margin-bottom:18px;border:1px solid rgba(255,215,0,0.12);}
+.comp-header{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;background:rgba(255,215,0,0.06);padding:10px 12px;border-bottom:1px solid rgba(255,215,0,0.1);}
+.comp-h{font-size:9px;font-family:‘Cinzel’,serif;letter-spacing:1.5px;color:var(–gold-dim);text-align:center;}
+.comp-h:first-child{text-align:left;}
+.comp-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;padding:11px 12px;border-bottom:1px solid rgba(255,255,255,0.04);}
+.comp-row:last-child{border-bottom:none;}
+.comp-cell{font-size:11px;font-family:‘Lato’,sans-serif;color:var(–text-dim);text-align:center;line-height:1.4;}
+.comp-cell:first-child{font-family:‘Cinzel’,serif;font-size:11px;font-weight:700;text-align:left;color:rgba(255,255,255,0.7);}
+
+/* Punishment stages */
+.pun-stage{border-radius:18px;margin-bottom:14px;overflow:hidden;cursor:pointer;animation:fadeUp .45s ease both;}
+.pun-header{display:flex;align-items:center;gap:14px;padding:17px 18px;}
+.pun-icon-box{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;}
+.pun-info{flex:1;}
+.pun-stage-label{font-size:9px;letter-spacing:3px;font-family:‘Cinzel’,serif;margin-bottom:3px;}
+.pun-title{font-size:14px;font-family:‘Cinzel’,serif;font-weight:700;color:rgba(255,255,255,0.88);letter-spacing:.3px;}
+.pun-sub{font-size:10px;color:var(–text-dim);letter-spacing:1px;margin-top:2px;}
+.pun-arrow{font-size:14px;color:var(–text-dim);transition:transform .3s ease;}
+.pun-stage.open .pun-arrow{transform:rotate(180deg);}
+.pun-body{display:none;padding:0 18px 18px;}
+.pun-stage.open .pun-body{display:block;animation:expandDown .3s ease both;}
+.pun-desc{font-family:‘EB Garamond’,serif;font-size:15px;line-height:1.85;color:var(–text);margin-bottom:12px;}
+.pun-hadith{border-left:2px solid rgba(255,215,0,0.25);padding:10px 13px;background:rgba(255,215,0,0.03);border-radius:0 9px 9px 0;font-family:‘EB Garamond’,serif;font-style:italic;font-size:14px;color:rgba(232,224,208,0.68);line-height:1.7;margin-bottom:10px;}
+.pun-hadith-ref{display:block;font-style:normal;font-size:10px;color:var(–gold-dim);letter-spacing:2px;margin-top:5px;font-family:‘Lato’,sans-serif;}
+.pun-examples{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px;}
+.pun-tag{padding:4px 11px;border-radius:100px;font-size:10px;font-family:‘Lato’,sans-serif;border:1px solid;}
+
+/* hidden class */
+.hidden{display:none!important;}
+</style>
+
+</head>
+<body>
+
+<div class="bg-geo">
+  <div class="geo-ring"></div>
+  <div class="geo-ring"></div>
+  <div class="geo-ring"></div>
+</div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+
+<div class="wrap">
+
+  <!-- HERO -->
+
+  <div class="hero">
+    <div class="hero-ornament">
+      <div class="orn-line"></div>
+      <div class="orn-star">✦</div>
+      <div class="orn-line"></div>
+    </div>
+    <div class="hero-eyebrow">A Complete Guide</div>
+    <h1 class="hero-title">Sābiqūn</h1>
+    <div class="hero-arabic">السابقون</div>
+    <div class="hero-sub">THE FOREMOST BELIEVERS</div>
+    <div class="hero-ayah">
+      "And the foremost — the foremost. Those are the ones brought near [to Allah] in the Gardens of Pleasure."
+      <span class="hero-ayah-ref">Qur'an 56:10–12</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn active" onclick="showSection('levels',this)">Levels</button>
+      <button class="nav-btn" onclick="showSection('nafs',this)">The Nafs</button>
+      <button class="nav-btn" onclick="showSection('salvation',this)">Salvation</button>
+      <button class="nav-btn" onclick="showSection('accountability',this)">Accountability</button>
+      <button class="nav-btn" onclick="showSection('qualities',this)">Qualities</button>
+      <button class="nav-btn" onclick="showSection('depth',this)">Depth</button>
+      <button class="nav-btn" onclick="showSection('path',this)">The Path</button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <!-- SECTION: LEVELS -->
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <div class="section active" id="sec-levels">
+    <p class="levels-intro">Allah categorises believers into three ranks in Surah Fāṭir (35:32). Tap each level to learn more.</p>
+    <div class="divider"></div>
+
+```
+<!-- Level 1 -->
+<div class="level-card" id="lv1" style="background:linear-gradient(135deg,rgba(192,57,43,0.07),rgba(14,20,32,0.8));border:1px solid rgba(192,57,43,0.25);animation-delay:.1s" onclick="toggleCard('lv1')">
+  <div class="level-card-header">
+    <div>
+      <div class="level-num">LEVEL 01</div>
+    </div>
+    <div class="level-icon-circle" style="background:rgba(192,57,43,0.1);border-color:rgba(192,57,43,0.3);color:#e74c3c;">◌</div>
+    <div class="level-text">
+      <div class="level-title" style="color:#e74c3c;">Zālim li-Nafsih</div>
+      <div class="level-arabic">ظالم لنفسه</div>
+      <div class="level-subtitle">The Struggling Believer</div>
+    </div>
+    <div class="level-arrow">⌄</div>
+  </div>
+  <div class="level-body">
+    <p class="level-desc">One who wrongs their own soul — a believer who falls short, commits sins, neglects obligations, or is negligent in their worship. Despite this, they remain within the fold of Islam. Their struggle itself is a sign of faith; the pain of guilt is what separates them from the heedless.</p>
+    <p class="level-desc" style="font-size:14px;color:rgba(232,224,208,0.55);">This is not a permanent station. It is a beginning. The door of tawbah is wide open, and Allah loves those who return to Him repeatedly.</p>
+    <div class="level-traits">
+      <div class="trait-tag" style="background:rgba(192,57,43,0.08);color:#e74c3c;border-color:rgba(192,57,43,0.25);">Falls into sin</div>
+      <div class="trait-tag" style="background:rgba(192,57,43,0.08);color:#e74c3c;border-color:rgba(192,57,43,0.25);">Neglects obligations</div>
+      <div class="trait-tag" style="background:rgba(192,57,43,0.08);color:#e74c3c;border-color:rgba(192,57,43,0.25);">Still a believer</div>
+      <div class="trait-tag" style="background:rgba(192,57,43,0.08);color:#e74c3c;border-color:rgba(192,57,43,0.25);">Door of tawbah open</div>
+    </div>
+  </div>
+</div>
+
+<!-- Level 2 -->
+<div class="level-card" id="lv2" style="background:linear-gradient(135deg,rgba(230,126,34,0.07),rgba(14,20,32,0.8));border:1px solid rgba(230,126,34,0.22);animation-delay:.2s" onclick="toggleCard('lv2')">
+  <div class="level-card-header">
+    <div>
+      <div class="level-num">LEVEL 02</div>
+    </div>
+    <div class="level-icon-circle" style="background:rgba(230,126,34,0.1);border-color:rgba(230,126,34,0.3);color:#e67e22;">◑</div>
+    <div class="level-text">
+      <div class="level-title" style="color:#e67e22;">Muqtaṣid</div>
+      <div class="level-arabic">مقتصد</div>
+      <div class="level-subtitle">The Balanced Believer</div>
+    </div>
+    <div class="level-arrow">⌄</div>
+  </div>
+  <div class="level-body">
+    <p class="level-desc">One who is moderate — fulfilling their obligations and avoiding major sins, but not striving for extra excellence. They do the minimum required. Their ship sails, but slowly. They are saved, yet have not tapped into their full spiritual potential.</p>
+    <p class="level-desc" style="font-size:14px;color:rgba(232,224,208,0.55);">The muqtaṣid is stable, but stagnant. The danger is comfort — feeling that "doing enough" is enough, when the race to Allah has no finish line in this life.</p>
+    <div class="level-traits">
+      <div class="trait-tag" style="background:rgba(230,126,34,0.08);color:#e67e22;border-color:rgba(230,126,34,0.25);">Fulfils obligations</div>
+      <div class="trait-tag" style="background:rgba(230,126,34,0.08);color:#e67e22;border-color:rgba(230,126,34,0.25);">Avoids major sins</div>
+      <div class="trait-tag" style="background:rgba(230,126,34,0.08);color:#e67e22;border-color:rgba(230,126,34,0.25);">Moderate deeds</div>
+      <div class="trait-tag" style="background:rgba(230,126,34,0.08);color:#e67e22;border-color:rgba(230,126,34,0.25);">No extra striving</div>
+    </div>
+  </div>
+</div>
+
+<!-- Level 3 -->
+<div class="level-card" id="lv3" style="background:linear-gradient(135deg,rgba(255,215,0,0.07),rgba(14,20,32,0.8));border:1px solid rgba(255,215,0,0.22);animation-delay:.3s;animation:borderGlow 4s ease infinite" onclick="toggleCard('lv3')">
+  <div class="level-card-header">
+    <div>
+      <div class="level-num">LEVEL 03</div>
+    </div>
+    <div class="level-icon-circle" style="background:rgba(255,215,0,0.12);border-color:rgba(255,215,0,0.35);color:#FFD700;box-shadow:0 0 16px rgba(255,215,0,0.2);">✦</div>
+    <div class="level-text">
+      <div class="level-title" style="color:#FFD700;">Sābiqūn bil-Khayrāt</div>
+      <div class="level-arabic">سابق بالخيرات</div>
+      <div class="level-subtitle">The Foremost in Goodness</div>
+    </div>
+    <div class="level-arrow">⌄</div>
+  </div>
+  <div class="level-body">
+    <p class="level-desc">The highest rank — those who race ahead in goodness, performing not only the obligatory but excelling in the voluntary. Every moment is an opportunity for Allah. They give in ease and hardship, control their anger, forgive generously, and do not persist in sin.</p>
+    <p class="level-desc" style="font-size:14px;color:rgba(232,224,208,0.55);">Their heart is always oriented toward Allah. They feel the weight of accountability and the sweetness of His closeness simultaneously. This is the station we are called to aspire toward.</p>
+    <div class="level-traits">
+      <div class="trait-tag" style="background:rgba(255,215,0,0.08);color:#FFD700;border-color:rgba(255,215,0,0.25);">Races to good deeds</div>
+      <div class="trait-tag" style="background:rgba(255,215,0,0.08);color:#FFD700;border-color:rgba(255,215,0,0.25);">Does nawāfil</div>
+      <div class="trait-tag" style="background:rgba(255,215,0,0.08);color:#FFD700;border-color:rgba(255,215,0,0.25);">Quick to repent</div>
+      <div class="trait-tag" style="background:rgba(255,215,0,0.08);color:#FFD700;border-color:rgba(255,215,0,0.25);">Excels in character</div>
+      <div class="trait-tag" style="background:rgba(255,215,0,0.08);color:#FFD700;border-color:rgba(255,215,0,0.25);">Foremost in Jannah</div>
+    </div>
+  </div>
+</div>
+
+<div style="background:rgba(255,215,0,0.04);border:1px solid rgba(255,215,0,0.1);border-radius:14px;padding:16px 18px;margin-bottom:24px;">
+  <p style="font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:var(--text);line-height:1.75;">"Then We caused to inherit the Book those We have chosen of Our servants; and among them is he who wrongs himself, and among them is one who is moderate, and among them is one who is foremost in good deeds by permission of Allah."</p>
+  <span style="display:block;font-size:10px;color:var(--gold-dim);letter-spacing:2px;margin-top:8px;text-align:right;font-family:'Lato',sans-serif;">Qur'an 35:32</span>
+</div>
+```
+
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <!-- SECTION: NAFS -->
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <div class="section" id="sec-nafs">
+    <p class="nafs-intro">The Qur'an speaks of three stages of the soul. Each stage of the Nafs corresponds directly to a level of believer. Understanding your Nafs is understanding where you stand.</p>
+    <div class="divider"></div>
+
+```
+<!-- Mapping bar -->
+<div class="nafs-map">
+  <div class="nafs-map-item">
+    <div class="nafs-map-label">SOUL</div>
+    <div class="nafs-map-val" style="color:#e74c3c;">Ammārah</div>
+  </div>
+  <div class="nafs-map-arrow">→</div>
+  <div class="nafs-map-item">
+    <div class="nafs-map-label">LEVEL</div>
+    <div class="nafs-map-val" style="color:#e74c3c;">Zālim</div>
+  </div>
+  <div style="width:1px;height:30px;background:rgba(255,215,0,0.12);flex-shrink:0;"></div>
+  <div class="nafs-map-item">
+    <div class="nafs-map-label">SOUL</div>
+    <div class="nafs-map-val" style="color:#e67e22;">Lawwāmah</div>
+  </div>
+  <div class="nafs-map-arrow">→</div>
+  <div class="nafs-map-item">
+    <div class="nafs-map-label">LEVEL</div>
+    <div class="nafs-map-val" style="color:#e67e22;">Muqtaṣid</div>
+  </div>
+  <div style="width:1px;height:30px;background:rgba(255,215,0,0.12);flex-shrink:0;"></div>
+  <div class="nafs-map-item">
+    <div class="nafs-map-label">SOUL</div>
+    <div class="nafs-map-val" style="color:#FFD700;">Muṭma'innah</div>
+  </div>
+  <div class="nafs-map-arrow">→</div>
+  <div class="nafs-map-item">
+    <div class="nafs-map-label">LEVEL</div>
+    <div class="nafs-map-val" style="color:#FFD700;">Sābiqūn</div>
+  </div>
+</div>
+
+<!-- NAFS 1: Ammara -->
+<div class="nafs-card" id="nafs1" onclick="toggleCard('nafs1')"
+  style="background:linear-gradient(160deg,rgba(192,57,43,0.09),rgba(14,20,32,0.95));border:1px solid rgba(192,57,43,0.28);animation-delay:.1s;">
+  <div class="nafs-card-glow" style="background:linear-gradient(90deg,rgba(192,57,43,0.6),rgba(192,57,43,0.1));"></div>
+  <div class="nafs-header">
+    <div class="nafs-symbol" style="background:rgba(192,57,43,0.1);border:1px solid rgba(192,57,43,0.3);">
+      <div class="nafs-symbol-inner">🔥</div>
+    </div>
+    <div class="nafs-info">
+      <div class="nafs-stage" style="color:rgba(231,76,60,0.7);">STAGE 01 — THE COMMANDING SOUL</div>
+      <div class="nafs-name" style="color:#e74c3c;">Nafs al-Ammārah</div>
+      <div class="nafs-arabic">النفس الأمارة بالسوء</div>
+      <div class="nafs-sub">Commands toward evil</div>
+    </div>
+    <div class="nafs-arrow">⌄</div>
+  </div>
+  <div class="nafs-body">
+    <div class="nafs-ayah" style="background:rgba(192,57,43,0.07);border:1px solid rgba(192,57,43,0.18);">
+      "Indeed, the soul is a persistent enjoiner of evil, except those upon whom my Lord has mercy."
+      <span class="nafs-ayah-ref" style="color:rgba(231,76,60,0.6);">YŪSUF 12:53 — Prophet Yūsuf ﷺ speaking</span>
+    </div>
+    <p class="nafs-desc">This is the raw, untrained soul — dominated by desires, impulses, and the pull of the lower self. It commands the person toward sin without guilt or hesitation. The nafs ammārah does not reflect, it reacts. It wants what it wants, now.</p>
+    <p class="nafs-desc" style="font-size:14px;color:rgba(232,224,208,0.5);">This is the default state of the human soul before spiritual training. Even the Prophets' companions had to fight this nafs. The fact that you feel its pull does not make you evil — it makes you human. The battle itself is the test.</p>
+    <div class="nafs-signs-title">SIGNS YOU ARE DOMINATED BY THIS NAFS</div>
+    <div class="nafs-signs">
+      <div class="nafs-sign" style="background:rgba(192,57,43,0.06);border:1px solid rgba(192,57,43,0.15);">
+        <span class="nafs-sign-icon">🔴</span>
+        <span class="nafs-sign-text">You sin without feeling guilt — or guilt fades very quickly</span>
+      </div>
+      <div class="nafs-sign" style="background:rgba(192,57,43,0.06);border:1px solid rgba(192,57,43,0.15);">
+        <span class="nafs-sign-icon">🔴</span>
+        <span class="nafs-sign-text">Desires consistently override your better judgment</span>
+      </div>
+      <div class="nafs-sign" style="background:rgba(192,57,43,0.06);border:1px solid rgba(192,57,43,0.15);">
+        <span class="nafs-sign-icon">🔴</span>
+        <span class="nafs-sign-text">You rarely think about accountability or the hereafter</span>
+      </div>
+      <div class="nafs-sign" style="background:rgba(192,57,43,0.06);border:1px solid rgba(192,57,43,0.15);">
+        <span class="nafs-sign-icon">🔴</span>
+        <span class="nafs-sign-text">Worship feels like a burden rather than a gift</span>
+      </div>
+    </div>
+    <div class="nafs-link" style="background:rgba(192,57,43,0.07);border:1px solid rgba(192,57,43,0.2);border-radius:12px;">
+      <span style="font-size:18px;">🔗</span>
+      <div>
+        <div class="nafs-link-label" style="color:rgba(231,76,60,0.6);">CORRESPONDS TO</div>
+        <div class="nafs-link-val" style="color:#e74c3c;">Zālim li-Nafsih — The Struggling Believer</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAFS 2: Lawwama -->
+<div class="nafs-card" id="nafs2" onclick="toggleCard('nafs2')"
+  style="background:linear-gradient(160deg,rgba(230,126,34,0.09),rgba(14,20,32,0.95));border:1px solid rgba(230,126,34,0.25);animation-delay:.2s;">
+  <div class="nafs-card-glow" style="background:linear-gradient(90deg,rgba(230,126,34,0.6),rgba(230,126,34,0.1));"></div>
+  <div class="nafs-header">
+    <div class="nafs-symbol" style="background:rgba(230,126,34,0.1);border:1px solid rgba(230,126,34,0.3);">
+      <div class="nafs-symbol-inner">⚡</div>
+    </div>
+    <div class="nafs-info">
+      <div class="nafs-stage" style="color:rgba(230,126,34,0.7);">STAGE 02 — THE SELF-REPROACHING SOUL</div>
+      <div class="nafs-name" style="color:#e67e22;">Nafs al-Lawwāmah</div>
+      <div class="nafs-arabic">النفس اللوامة</div>
+      <div class="nafs-sub">Blames and reproaches itself</div>
+    </div>
+    <div class="nafs-arrow">⌄</div>
+  </div>
+  <div class="nafs-body">
+    <div class="nafs-ayah" style="background:rgba(230,126,34,0.06);border:1px solid rgba(230,126,34,0.18);">
+      "And I swear by the self-reproaching soul."
+      <span class="nafs-ayah-ref" style="color:rgba(230,126,34,0.6);">AL-QIYĀMAH 75:2 — Allah swears by this soul</span>
+    </div>
+    <p class="nafs-desc">The soul that reproaches itself. This is a significant upgrade — the conscience is now awake. After sinning, this nafs turns on itself with guilt, regret, and self-blame. It is in a constant internal battle — wanting goodness, falling short, then blaming itself.</p>
+    <p class="nafs-desc" style="font-size:14px;color:rgba(232,224,208,0.5);">Notably, Allah swears by this soul in the Qur'an — a sign of its honour and importance. The self-reproaching soul is precious because it has not become numb. Its guilt is a mercy. But guilt alone is not enough — it must be channelled into change.</p>
+    <div class="nafs-signs-title">SIGNS YOU ARE IN THIS STAGE</div>
+    <div class="nafs-signs">
+      <div class="nafs-sign" style="background:rgba(230,126,34,0.06);border:1px solid rgba(230,126,34,0.15);">
+        <span class="nafs-sign-icon">🟠</span>
+        <span class="nafs-sign-text">You feel genuine guilt after sinning and wish you hadn't</span>
+      </div>
+      <div class="nafs-sign" style="background:rgba(230,126,34,0.06);border:1px solid rgba(230,126,34,0.15);">
+        <span class="nafs-sign-icon">🟠</span>
+        <span class="nafs-sign-text">You try to do better but find yourself slipping into the same patterns</span>
+      </div>
+      <div class="nafs-sign" style="background:rgba(230,126,34,0.06);border:1px solid rgba(230,126,34,0.15);">
+        <span class="nafs-sign-icon">🟠</span>
+        <span class="nafs-sign-text">Your worship is inconsistent — good periods followed by lapses</span>
+      </div>
+      <div class="nafs-sign" style="background:rgba(230,126,34,0.06);border:1px solid rgba(230,126,34,0.15);">
+        <span class="nafs-sign-icon">🟠</span>
+        <span class="nafs-sign-text">You make tawbah but are not yet consistent in avoiding that sin</span>
+      </div>
+    </div>
+    <div style="background:rgba(255,215,0,0.04);border-left:2px solid rgba(230,126,34,0.4);padding:12px 14px;border-radius:0 10px 10px 0;margin-bottom:14px;">
+      <p style="font-family:'EB Garamond',serif;font-size:14px;color:rgba(232,224,208,0.65);line-height:1.7;font-style:italic;">This stage is a battlefield, not a failure. The war between the nafs and the 'aql (reason) is raging — and the very fact that the soul is fighting is a sign of life. Most people live and die at this stage. The question is: will you stay here, or will you climb?</p>
+    </div>
+    <div class="nafs-link" style="background:rgba(230,126,34,0.06);border:1px solid rgba(230,126,34,0.2);border-radius:12px;">
+      <span style="font-size:18px;">🔗</span>
+      <div>
+        <div class="nafs-link-label" style="color:rgba(230,126,34,0.6);">CORRESPONDS TO</div>
+        <div class="nafs-link-val" style="color:#e67e22;">Muqtaṣid — The Balanced Believer</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAFS 3: Mutmainna -->
+<div class="nafs-card" id="nafs3" onclick="toggleCard('nafs3')"
+  style="background:linear-gradient(160deg,rgba(255,215,0,0.08),rgba(14,20,32,0.95));border:1px solid rgba(255,215,0,0.25);animation-delay:.3s;animation:borderGlow 4s ease infinite;">
+  <div class="nafs-card-glow" style="background:linear-gradient(90deg,rgba(255,215,0,0.7),rgba(255,215,0,0.05));"></div>
+  <div class="nafs-header">
+    <div class="nafs-symbol" style="background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.3);box-shadow:0 0 20px rgba(255,215,0,0.12);">
+      <div class="nafs-symbol-inner">✨</div>
+    </div>
+    <div class="nafs-info">
+      <div class="nafs-stage" style="color:rgba(255,215,0,0.6);">STAGE 03 — THE SOUL AT PEACE</div>
+      <div class="nafs-name" style="color:#FFD700;">Nafs al-Muṭma'innah</div>
+      <div class="nafs-arabic">النفس المطمئنة</div>
+      <div class="nafs-sub">Serene, settled, and at rest in Allah</div>
+    </div>
+    <div class="nafs-arrow">⌄</div>
+  </div>
+  <div class="nafs-body">
+    <div class="nafs-ayah" style="background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.18);">
+      "O tranquil soul — return to your Lord, pleased and pleasing. Enter among My servants. Enter My Paradise."
+      <span class="nafs-ayah-ref" style="color:rgba(255,215,0,0.5);">AL-FAJR 89:27–30 — Allah addresses this soul directly</span>
+    </div>
+    <p class="nafs-desc">The soul at complete peace. The internal war is over — not because desires disappeared, but because the soul has mastered them. Obedience to Allah now flows naturally, not forcefully. The heart finds its rest exclusively in Allah's remembrance, as He promised: <em>"Verily, in the remembrance of Allah do hearts find rest."</em> (13:28)</p>
+    <p class="nafs-desc" style="font-size:14px;color:rgba(232,224,208,0.5);">This is the soul Allah addresses with love and honour at death — calling it back, pleased with it, and it pleased with Him. This is the destination of every sincere believer. It is not reserved for saints alone — it is the promise of Allah for all who strive sincerely.</p>
+    <div class="nafs-signs-title">SIGNS OF THE MUṬMA'INNAH SOUL</div>
+    <div class="nafs-signs">
+      <div class="nafs-sign" style="background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.15);">
+        <span class="nafs-sign-icon">✦</span>
+        <span class="nafs-sign-text" style="color:rgba(232,224,208,0.75);">Deep inner peace that does not depend on circumstances</span>
+      </div>
+      <div class="nafs-sign" style="background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.15);">
+        <span class="nafs-sign-icon">✦</span>
+        <span class="nafs-sign-text" style="color:rgba(232,224,208,0.75);">Obedience feels natural — disobedience feels genuinely painful</span>
+      </div>
+      <div class="nafs-sign" style="background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.15);">
+        <span class="nafs-sign-icon">✦</span>
+        <span class="nafs-sign-text" style="color:rgba(232,224,208,0.75);">Trials bring patience and gratitude, not bitterness</span>
+      </div>
+      <div class="nafs-sign" style="background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.15);">
+        <span class="nafs-sign-icon">✦</span>
+        <span class="nafs-sign-text" style="color:rgba(232,224,208,0.75);">The heart is fully content with Allah's decree (riḍā)</span>
+      </div>
+      <div class="nafs-sign" style="background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.15);">
+        <span class="nafs-sign-icon">✦</span>
+        <span class="nafs-sign-text" style="color:rgba(232,224,208,0.75);">Worship is a joy and a longing, never a chore</span>
+      </div>
+    </div>
+    <div class="nafs-link" style="background:rgba(255,215,0,0.06);border:1px solid rgba(255,215,0,0.2);border-radius:12px;">
+      <span style="font-size:18px;">🔗</span>
+      <div>
+        <div class="nafs-link-label" style="color:rgba(255,215,0,0.5);">CORRESPONDS TO</div>
+        <div class="nafs-link-val" style="color:#FFD700;">Sābiqūn — The Foremost Believers</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Journey reminder -->
+<div style="background:rgba(255,215,0,0.03);border:1px solid rgba(255,215,0,0.1);border-radius:16px;padding:18px 20px;margin-bottom:24px;text-align:center;">
+  <div style="font-size:9px;letter-spacing:4px;color:var(--gold-dim);font-family:'Cinzel',serif;margin-bottom:10px;">THE KEY INSIGHT</div>
+  <p style="font-family:'EB Garamond',serif;font-size:15px;color:var(--text);line-height:1.8;">The Nafs is not fixed. It is trained. Every act of worship, every moment of self-restraint, every sincere tawbah — all of it gradually moves your soul from Ammārah toward Muṭma'innah. The journey is the 'ibādah.</p>
+</div>
+```
+
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <!-- SECTION: QUALITIES -->
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <div class="section" id="sec-qualities">
+    <p class="qualities-intro">The Qur'an and Sunnah describe specific qualities that define the best believers. Explore each one.</p>
+
+```
+<div class="cat-filter">
+  <button class="filter-btn active" onclick="filterQ('all',this)">All</button>
+  <button class="filter-btn" onclick="filterQ('worship',this)">Worship</button>
+  <button class="filter-btn" onclick="filterQ('discipline',this)">Discipline</button>
+  <button class="filter-btn" onclick="filterQ('character',this)">Character</button>
+  <button class="filter-btn" onclick="filterQ('social',this)">Social</button>
+  <button class="filter-btn" onclick="filterQ('spiritual',this)">Spiritual</button>
+</div>
+
+<div id="qualitiesList"></div>
+```
+
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <!-- SECTION: DEPTH -->
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <div class="section" id="sec-depth">
+    <p class="depth-intro">Spiritual depth is a ladder of closeness to Allah. Each station builds upon the one before it. Tap each level to explore.</p>
+    <div class="divider"></div>
+
+```
+<div class="depth-ladder">
+  <div class="depth-line"></div>
+
+  <div class="depth-step" id="dep1" onclick="toggleDepth('dep1')" style="animation-delay:.1s">
+    <div class="depth-node"><div class="depth-node-dot"></div></div>
+    <div class="depth-content">
+      <div class="depth-level-num">LEVEL 01</div>
+      <div class="depth-name">Ṣāliheen</div>
+      <div class="depth-ar">الصالحون — The Righteous</div>
+      <div class="depth-body">
+        <p class="depth-body-text">The foundation of spiritual life. The Ṣālih (righteous person) fulfils their obligations to Allah and avoids the prohibited. They are honest, upright, and consistent in worship. Their outward deeds align with inward intention.</p>
+        <div class="depth-signs">
+          <div class="depth-sign"><span class="depth-sign-dot">✦</span><span>Consistent in the five pillars</span></div>
+          <div class="depth-sign"><span class="depth-sign-dot">✦</span><span>Avoids major and minor sins</span></div>
+          <div class="depth-sign"><span class="depth-sign-dot">✦</span><span>Good character with people</span></div>
+          <div class="depth-sign"><span class="depth-sign-dot">✦</span><span>Honest in dealings and speech</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="depth-step" id="dep2" onclick="toggleDepth('dep2')" style="animation-delay:.2s">
+    <div class="depth-node"><div class="depth-node-dot"></div></div>
+    <div class="depth-content">
+      <div class="depth-level-num">LEVEL 02</div>
+      <div class="depth-name">Muttaqeen</div>
+      <div class="depth-ar">المتقون — The God-Fearing</div>
+      <div class="depth-body">
+        <p class="depth-body-text">Taqwā is a shield. The Muttaqī goes beyond outward compliance — they develop a deep internal consciousness of Allah. They avoid not just the ḥarām but the doubtful. They are aware of Allah in private as much as in public.</p>
+        <div class="depth-signs">
+          <div class="depth-sign"><span class="depth-sign-dot">✦</span><span>Avoids doubtful matters (shubuhāt)</span></div>
+          <div class="depth-sign"><span class="depth-sign-dot">✦</span><span>Equal in private and public conduct</span></div>
+          <div class="depth-sign"><span class="depth-sign-dot">✦</span><span>Fears Allah's displeasure deeply</span></div>
+          <div class="depth-sign"><span class="depth-sign-dot">✦</span><span>Spends in the cause of Allah regularly</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="depth-step" id="dep3" onclick="toggleDepth('dep3')" style="animation-delay:.3s">
+    <div class="depth-node"><div class="depth-node-dot"></div></div>
+    <div class="depth-content">
+      <div class="depth-level-num">LEVEL 03</div>
+      <div class="depth-name">Muḥsineen</div>
+      <div class="depth-ar">المحسنون — The Excellence-Seekers</div>
+      <div class="depth-body">
+        <p class="depth-body-text">Iḥsān is the peak of worship quality. The Prophet ﷺ defined it: "To worship Allah as if you see Him, and if you cannot see Him, know that He sees you." Every act becomes an act of love, not just duty. The Muḥsin brings beauty into everything they do.</p>
+        <div class="depth-signs">
+          <div class="depth-sign"><span class="depth-sign-dot">✦</span><span>Worships with full presence (khushū')</span></div>
+          <div class="depth-sign"><span class="depth-sign-dot">✦</span><span>Perfects their character and conduct</span></div>
+          <div class="depth-sign"><span class="depth-sign-dot">✦</span><span>Does acts of excellence without being asked</span></div>
+          <div class="depth-sign"><span class="depth-sign-dot">✦</span><span>Feels closeness and love for Allah in worship</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="depth-step" id="dep4" onclick="toggleDepth('dep4')" style="animation-delay:.4s">
+    <div class="depth-node"><div class="depth-node-dot"></div></div>
+    <div class="depth-content">
+      <div class="depth-level-num">LEVEL 04</div>
+      <div class="depth-name">Ṣiddiqeen</div>
+      <div class="depth-ar">الصديقون — The Truthful Masters</div>
+      <div class="depth-body">
+        <p class="depth-body-text">The highest rank below Prophethood. The Ṣiddiq is one whose inner reality and outer reality are one — no gap between their claim of faith and their lived experience. Abū Bakr al-Ṣiddīq ؓ is the greatest example. They have achieved complete sincerity and certainty.</p>
+        <div class="depth-signs">
+          <div class="depth-sign"><span class="depth-sign-dot">✦</span><span>Unwavering certainty (yaqīn) in the heart</span></div>
+          <div class="depth-sign"><span class="depth-sign-dot">✦</span><span>Complete alignment of inner and outer self</span></div>
+          <div class="depth-sign"><span class="depth-sign-dot">✦</span><span>Never wavers in trials — full tawakkul</span></div>
+          <div class="depth-sign"><span class="depth-sign-dot">✦</span><span>Their presence reminds others of Allah</span></div>
+        </div>
+        <div style="margin-top:14px;background:rgba(255,215,0,0.04);border-left:2px solid rgba(255,215,0,0.25);padding:10px 12px;border-radius:0 8px 8px 0;">
+          <p style="font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:rgba(232,224,208,0.7);line-height:1.7;">"Whoever obeys Allah and the Messenger — those will be with the ones upon whom Allah has bestowed favour of the prophets, the steadfast affirmers of truth, the martyrs and the righteous."</p>
+          <span style="display:block;font-size:10px;color:var(--gold-dim);letter-spacing:2px;margin-top:6px;font-family:'Lato',sans-serif;">Qur'an 4:69</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <!-- SECTION: THE PATH -->
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <div class="section" id="sec-path">
+    <p class="path-intro">The path from struggling to foremost is not taken in one leap. It is a deliberate, step-by-step ascent. Here is how the scholars describe the journey.</p>
+    <div class="divider"></div>
+
+```
+<div class="path-steps">
+
+  <div class="path-step" style="animation-delay:.1s">
+    <div class="path-step-num">01</div>
+    <div class="path-step-body">
+      <div class="path-step-title">Sincere Intention (Niyyah)</div>
+      <p class="path-step-desc">Every journey begins with turning the heart. Before actions change, the intention must shift — "I want to be among the foremost." This intention itself is an act of worship, and Allah guides those who sincerely seek His proximity.</p>
+    </div>
+  </div>
+  <div class="path-connector"></div>
+
+  <div class="path-step" style="animation-delay:.18s">
+    <div class="path-step-num">02</div>
+    <div class="path-step-body">
+      <div class="path-step-title">Tawbah — Return to Allah</div>
+      <p class="path-step-desc">The Sābiqūn do not persist in sin. When they fall — and every human falls — they turn back immediately. Tawbah is not a one-time act; it is a way of being. Clean the slate and begin each day fresh. Allah loves those who constantly return.</p>
+    </div>
+  </div>
+  <div class="path-connector"></div>
+
+  <div class="path-step" style="animation-delay:.26s">
+    <div class="path-step-num">03</div>
+    <div class="path-step-body">
+      <div class="path-step-title">Perfect the Obligatory First</div>
+      <p class="path-step-desc">Allah says in the Qudsī ḥadīth: "My servant does not come close to Me with anything more beloved than what I have made obligatory upon him." The five prayers, fasting, zakāh — these are the pillars. Master their quality before adding volume.</p>
+    </div>
+  </div>
+  <div class="path-connector"></div>
+
+  <div class="path-step" style="animation-delay:.34s">
+    <div class="path-step-num">04</div>
+    <div class="path-step-body">
+      <div class="path-step-title">Add the Voluntary (Nawāfil)</div>
+      <p class="path-step-desc">The Qudsī ḥadīth continues: "My servant continues to draw nearer to Me through voluntary acts until I love him." Tahajjud, voluntary fasting, extra charity, reading Qur'an beyond the minimum — these are the wings of the Sābiqūn.</p>
+    </div>
+  </div>
+  <div class="path-connector"></div>
+
+  <div class="path-step" style="animation-delay:.42s">
+    <div class="path-step-num">05</div>
+    <div class="path-step-body">
+      <div class="path-step-title">Purify the Character</div>
+      <p class="path-step-desc">The Prophet ﷺ said: "The heaviest thing on the scale of deeds is good character." Controlling anger, forgiving people, speaking truth, lowering the gaze — these are not secondary. They are signs of whether the worship has penetrated the heart.</p>
+    </div>
+  </div>
+  <div class="path-connector"></div>
+
+  <div class="path-step" style="animation-delay:.5s">
+    <div class="path-step-num">06</div>
+    <div class="path-step-body">
+      <div class="path-step-title">Focus on the Hereafter</div>
+      <p class="path-step-desc">The Sābiqūn have recalibrated their vision. The dunya becomes a means, not an end. Every blessing is a trust, every trial is a purification. They race because they see clearly what is waiting — and they want to arrive first.</p>
+    </div>
+  </div>
+  <div class="path-connector"></div>
+
+  <div class="path-step" style="animation-delay:.58s">
+    <div class="path-step-num">07</div>
+    <div class="path-step-body">
+      <div class="path-step-title">Live with Taqwā</div>
+      <p class="path-step-desc">Taqwā is not a moment — it is a continuous state of God-consciousness woven into every choice. When it becomes your default mode, when you instinctively ask "does this please Allah?" — you have arrived at the mindset of the Sābiqūn.</p>
+    </div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,rgba(255,215,0,0.07),rgba(255,215,0,0.03));border:1px solid rgba(255,215,0,0.18);border-radius:18px;padding:20px;margin-top:8px;">
+    <div style="font-size:9px;letter-spacing:4px;color:var(--gold-dim);font-family:'Cinzel',serif;margin-bottom:10px;text-align:center;">THE REMINDER</div>
+    <p style="font-family:'EB Garamond',serif;font-style:italic;font-size:15px;color:var(--text);line-height:1.8;text-align:center;">"Race toward forgiveness from your Lord and a Garden whose width is like the width of the heavens and earth, prepared for those who believed in Allah and His messengers."</p>
+    <p style="font-size:10px;color:var(--gold-dim);letter-spacing:2px;margin-top:10px;text-align:center;font-family:'Lato',sans-serif;">QUR'AN 57:21</p>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <!-- SECTION: SALVATION -->
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <div class="section" id="sec-salvation">
+    <p class="sec-intro">The Qur'an brings salvation down to three core questions. Scholars say Sūrah Al-'Aṣr summarises it all. This is the minimum bar — and the elite bar — according to Qur'an and Sunnah.</p>
+    <div class="divider"></div>
+
+```
+<!-- 3-Question Test -->
+<div style="background:rgba(255,215,0,0.04);border:1px solid rgba(255,215,0,0.14);border-radius:18px;padding:18px 20px;margin-bottom:20px;">
+  <div style="font-size:9px;letter-spacing:4px;color:var(--gold-dim);font-family:'Cinzel',serif;text-align:center;margin-bottom:14px;">THE 3-QUESTION SELF-TEST</div>
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 14px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06);">
+      <div style="width:28px;height:28px;border-radius:8px;background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.2);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:12px;font-weight:900;color:#FFD700;flex-shrink:0;">1</div>
+      <div><div style="font-size:13px;font-family:'Cinzel',serif;font-weight:700;color:rgba(255,255,255,0.85);margin-bottom:3px;">Is My Faith Correct?</div><div style="font-size:12px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.5;">Pure Tawḥīd — belief in Allah alone, His messengers, the Qur'an, and the Last Day</div></div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 14px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06);">
+      <div style="width:28px;height:28px;border-radius:8px;background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.2);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:12px;font-weight:900;color:#FFD700;flex-shrink:0;">2</div>
+      <div><div style="font-size:13px;font-family:'Cinzel',serif;font-weight:700;color:rgba(255,255,255,0.85);margin-bottom:3px;">Am I Trying to Do Good?</div><div style="font-size:12px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.5;">Consistent effort in righteous deeds — not perfection, but direction</div></div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 14px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06);">
+      <div style="width:28px;height:28px;border-radius:8px;background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.2);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:12px;font-weight:900;color:#FFD700;flex-shrink:0;">3</div>
+      <div><div style="font-size:13px;font-family:'Cinzel',serif;font-weight:700;color:rgba(255,255,255,0.85);margin-bottom:3px;">What Do I Do When I Sin?</div><div style="font-size:12px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.5;">Return to Allah quickly — the believer falls but does not stay fallen</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q1: Iman -->
+<div class="salv-card" id="sv1" style="background:linear-gradient(135deg,rgba(41,128,185,0.07),rgba(14,20,32,0.95));border:1px solid rgba(41,128,185,0.22);animation-delay:.1s" onclick="toggleCard('sv1')">
+  <div class="salv-header">
+    <div class="salv-num" style="background:rgba(41,128,185,0.12);border:1px solid rgba(41,128,185,0.25);color:#3498db;">1</div>
+    <div class="salv-label">
+      <div class="salv-title" style="color:#3498db;">Is My Faith Correct? — Īmān & Tawḥīd</div>
+      <div class="salv-sub">THE FOUNDATION OF EVERYTHING</div>
+    </div>
+    <div class="salv-arrow">⌄</div>
+  </div>
+  <div class="salv-body">
+    <p class="salv-desc">Tawḥīd is the absolute foundation. Without it, no deed — no matter how great — carries weight. With it, even a struggling believer has hope. The first testimony of faith (Lā ilāha illallāh) is the key to Paradise.</p>
+    <div class="salv-ayah">
+      "Indeed, Allah does not forgive associating partners with Him, but He forgives anything less than that for whom He wills."
+      <span class="salv-ayah-ref">QUR'AN 4:48</span>
+    </div>
+    <div class="salv-list">
+      <div class="salv-item"><span class="salv-item-icon" style="color:#3498db;">✦</span><span class="salv-item-text">Shirk (associating partners with Allah) is the only sin that may not be forgiven if one dies upon it</span></div>
+      <div class="salv-item"><span class="salv-item-icon" style="color:#3498db;">✦</span><span class="salv-item-text">Every other sin — no matter how grave — falls under Allah's mercy and potential forgiveness</span></div>
+      <div class="salv-item"><span class="salv-item-icon" style="color:#3498db;">✦</span><span class="salv-item-text">Pure Tawḥīd means: worship, love, fear, and hope directed to Allah alone</span></div>
+    </div>
+    <div class="salv-ayah" style="border-left-color:rgba(52,152,219,0.4);">
+      "Whoever meets Allah without associating anything with Him will enter Paradise."
+      <span class="salv-ayah-ref">BUKHĀRĪ & MUSLIM</span>
+    </div>
+  </div>
+</div>
+
+<!-- Q2: Righteous Deeds -->
+<div class="salv-card" id="sv2" style="background:linear-gradient(135deg,rgba(39,174,96,0.07),rgba(14,20,32,0.95));border:1px solid rgba(39,174,96,0.22);animation-delay:.15s" onclick="toggleCard('sv2')">
+  <div class="salv-header">
+    <div class="salv-num" style="background:rgba(39,174,96,0.12);border:1px solid rgba(39,174,96,0.25);color:#2ecc71;">2</div>
+    <div class="salv-label">
+      <div class="salv-title" style="color:#2ecc71;">Am I Trying to Do Good? — 'Amal Ṣāliḥ</div>
+      <div class="salv-sub">APPEARS OVER 50 TIMES IN THE QUR'AN</div>
+    </div>
+    <div class="salv-arrow">⌄</div>
+  </div>
+  <div class="salv-body">
+    <p class="salv-desc">The phrase "those who believe and do righteous deeds" appears more than 50 times in the Qur'an. Allah does not ask for perfection. He asks for sincere, consistent effort. Even small deeds done regularly are beloved to Him.</p>
+    <div class="salv-ayah">
+      "The most beloved deeds to Allah are those done consistently, even if they are small."
+      <span class="salv-ayah-ref">BUKHĀRĪ & MUSLIM</span>
+    </div>
+    <div class="salv-list">
+      <div class="salv-item"><span class="salv-item-icon" style="color:#2ecc71;">✦</span><span class="salv-item-text">Prayer, fasting, zakāh, kindness, honesty, controlling desires</span></div>
+      <div class="salv-item"><span class="salv-item-icon" style="color:#2ecc71;">✦</span><span class="salv-item-text">Allah looks at consistency of direction, not quantity of deeds</span></div>
+      <div class="salv-item"><span class="salv-item-icon" style="color:#2ecc71;">✦</span><span class="salv-item-text">Referenced in Qur'an 2:25, 18:107, 95:6 and many more</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Q3: Tawbah -->
+<div class="salv-card" id="sv3" style="background:linear-gradient(135deg,rgba(155,89,182,0.07),rgba(14,20,32,0.95));border:1px solid rgba(155,89,182,0.22);animation-delay:.2s" onclick="toggleCard('sv3')">
+  <div class="salv-header">
+    <div class="salv-num" style="background:rgba(155,89,182,0.12);border:1px solid rgba(155,89,182,0.25);color:#9b59b6;">3</div>
+    <div class="salv-label">
+      <div class="salv-title" style="color:#9b59b6;">What Do I Do When I Sin? — Tawbah</div>
+      <div class="salv-sub">THE REAL TEST OF A BELIEVER</div>
+    </div>
+    <div class="salv-arrow">⌄</div>
+  </div>
+  <div class="salv-body">
+    <p class="salv-desc">Every human sins. The distinction is not between those who sin and those who don't — it is between those who return to Allah and those who persist arrogantly. The Qur'an describes the righteous as those who "do not persist knowingly."</p>
+    <div class="salv-ayah">
+      "Those who, when they commit a sin or wrong themselves, remember Allah and seek forgiveness — and they do not persist knowingly."
+      <span class="salv-ayah-ref">QUR'AN 3:135</span>
+    </div>
+    <div class="salv-ayah">
+      "Indeed, Allah loves those who constantly repent and loves those who purify themselves."
+      <span class="salv-ayah-ref">QUR'AN 2:222</span>
+    </div>
+    <div class="salv-list">
+      <div class="salv-item"><span class="salv-item-icon" style="color:#9b59b6;">✦</span><span class="salv-item-text">Believers fall but return — arrogant sinners persist without remorse</span></div>
+      <div class="salv-item"><span class="salv-item-icon" style="color:#9b59b6;">✦</span><span class="salv-item-text">Tawbah requires: remorse, stopping the sin, resolving not to return</span></div>
+      <div class="salv-item"><span class="salv-item-icon" style="color:#9b59b6;">✦</span><span class="salv-item-text">Allah's door of forgiveness remains open until the last breath</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Surah Al-Asr -->
+<div style="background:linear-gradient(135deg,rgba(255,215,0,0.07),rgba(14,20,32,0.9));border:1px solid rgba(255,215,0,0.2);border-radius:18px;padding:20px;margin-bottom:18px;">
+  <div style="font-size:9px;letter-spacing:4px;color:var(--gold-dim);font-family:'Cinzel',serif;margin-bottom:12px;text-align:center;">THE ENTIRE RELIGION IN ONE SŪRAH</div>
+  <p style="font-family:'EB Garamond',serif;font-style:italic;font-size:15px;color:var(--text);line-height:1.85;margin-bottom:12px;text-align:center;">"By time, indeed mankind is in loss — except those who believe, do righteous deeds, encourage one another to truth, and encourage one another to patience."</p>
+  <p style="font-size:10px;color:var(--gold-dim);letter-spacing:2px;text-align:center;font-family:'Lato',sans-serif;margin-bottom:14px;">QUR'AN 103 — SŪRAH AL-'AṢR</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+    <div style="padding:10px 12px;background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.12);border-radius:10px;text-align:center;"><div style="font-size:18px;margin-bottom:4px;">🤲</div><div style="font-size:10px;font-family:'Cinzel',serif;color:rgba(255,255,255,0.7);letter-spacing:.5px;">Believe</div></div>
+    <div style="padding:10px 12px;background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.12);border-radius:10px;text-align:center;"><div style="font-size:18px;margin-bottom:4px;">✨</div><div style="font-size:10px;font-family:'Cinzel',serif;color:rgba(255,255,255,0.7);letter-spacing:.5px;">Righteous Deeds</div></div>
+    <div style="padding:10px 12px;background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.12);border-radius:10px;text-align:center;"><div style="font-size:18px;margin-bottom:4px;">📣</div><div style="font-size:10px;font-family:'Cinzel',serif;color:rgba(255,255,255,0.7);letter-spacing:.5px;">Encourage Truth</div></div>
+    <div style="padding:10px 12px;background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.12);border-radius:10px;text-align:center;"><div style="font-size:18px;margin-bottom:4px;">🌿</div><div style="font-size:10px;font-family:'Cinzel',serif;color:rgba(255,255,255,0.7);letter-spacing:.5px;">Encourage Patience</div></div>
+  </div>
+</div>
+
+<!-- Two bars comparison -->
+<div style="font-size:9px;letter-spacing:4px;color:var(--gold-dim);font-family:'Cinzel',serif;text-align:center;margin-bottom:12px;">TWO BARS — MINIMUM VS EXCELLENCE</div>
+
+<div style="border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);margin-bottom:10px;">
+  <div style="background:rgba(41,128,185,0.06);padding:16px 18px;border-bottom:1px solid rgba(255,255,255,0.06);">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+      <div style="width:10px;height:10px;border-radius:50%;background:#3498db;box-shadow:0 0 8px rgba(52,152,219,0.5);"></div>
+      <div style="font-size:12px;font-family:'Cinzel',serif;font-weight:700;color:#3498db;letter-spacing:1px;">BAR OF SALVATION</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:11px;color:rgba(52,152,219,0.6);">✦</span><span style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;">Correct belief (Tawḥīd)</span></div>
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:11px;color:rgba(52,152,219,0.6);">✦</span><span style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;">Some good deeds — sincere effort</span></div>
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:11px;color:rgba(52,152,219,0.6);">✦</span><span style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;">Repentance after sin — not persisting</span></div>
+    </div>
+  </div>
+  <div style="background:rgba(255,215,0,0.05);padding:16px 18px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+      <div style="width:10px;height:10px;border-radius:50%;background:#FFD700;box-shadow:0 0 8px rgba(255,215,0,0.5);"></div>
+      <div style="font-size:12px;font-family:'Cinzel',serif;font-weight:700;color:#FFD700;letter-spacing:1px;">BAR OF EXCELLENCE — SĀBIQŪN</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:11px;color:rgba(255,215,0,0.5);">✦</span><span style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;">Deep love of Allah — worship as longing</span></div>
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:11px;color:rgba(255,215,0,0.5);">✦</span><span style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;">Racing to good deeds — beyond the obligatory</span></div>
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:11px;color:rgba(255,215,0,0.5);">✦</span><span style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;">Sacrificing desires for Allah's pleasure</span></div>
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:11px;color:rgba(255,215,0,0.5);">✦</span><span style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;">Living entirely for the Hereafter</span></div>
+    </div>
+  </div>
+</div>
+
+<div style="background:rgba(255,215,0,0.03);border:1px solid rgba(255,215,0,0.1);border-radius:14px;padding:14px 18px;margin-bottom:24px;text-align:center;">
+  <p style="font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:var(--text);line-height:1.75;">"And the forerunners, the forerunners — those are the ones brought near to Allah in the Gardens of Pleasure."</p>
+  <span style="font-size:10px;color:var(--gold-dim);letter-spacing:2px;display:block;margin-top:7px;font-family:'Lato',sans-serif;">QUR'AN 56:10–12</span>
+</div>
+```
+
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <!-- SECTION: ACCOUNTABILITY -->
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <div class="section" id="sec-accountability">
+    <p class="sec-intro">A believer who dies with true faith (Tawḥīd) will not remain in Hell forever. But sins carry consequences. The Qur'an and authentic Sunnah describe five stages of accountability and purification.</p>
+    <div class="divider"></div>
+
+```
+<!-- Comparison table -->
+<div style="font-size:9px;letter-spacing:4px;color:var(--gold-dim);font-family:'Cinzel',serif;text-align:center;margin-bottom:12px;">THE THREE GROUPS — THEIR ACCOUNTABILITY</div>
+<div class="comp-table">
+  <div class="comp-header">
+    <div class="comp-h">GROUP</div>
+    <div class="comp-h">WHO</div>
+    <div class="comp-h">RECKONING</div>
+    <div class="comp-h">OUTCOME</div>
+  </div>
+  <div class="comp-row" style="background:rgba(192,57,43,0.04);">
+    <div class="comp-cell" style="color:#e74c3c;">Zālim</div>
+    <div class="comp-cell">Sinning believer</div>
+    <div class="comp-cell">May be strict</div>
+    <div class="comp-cell">Forgiven or purified temporarily</div>
+  </div>
+  <div class="comp-row" style="background:rgba(230,126,34,0.04);">
+    <div class="comp-cell" style="color:#e67e22;">Muqtaṣid</div>
+    <div class="comp-cell">Consistent believer</div>
+    <div class="comp-cell">Easy reckoning</div>
+    <div class="comp-cell">Paradise — no Hellfire</div>
+  </div>
+  <div class="comp-row" style="background:rgba(255,215,0,0.04);">
+    <div class="comp-cell" style="color:#FFD700;">Sābiqūn</div>
+    <div class="comp-cell">Foremost believer</div>
+    <div class="comp-cell">Possibly none</div>
+    <div class="comp-cell">Highest ranks in Jannah</div>
+  </div>
+</div>
+
+<div style="background:rgba(255,215,0,0.04);border:1px solid rgba(255,215,0,0.12);border-radius:14px;padding:14px 16px;margin-bottom:18px;">
+  <p style="font-family:'EB Garamond',serif;font-size:14px;color:rgba(232,224,208,0.7);line-height:1.75;font-style:italic;">A beautiful insight from the scholars: "The Zālim is saved by Allah's <strong style="-webkit-text-fill-color:rgba(255,255,255,0.75);">mercy</strong>, the Muqtaṣid by Allah's <strong style="-webkit-text-fill-color:rgba(255,255,255,0.75);">forgiveness</strong>, and the Sābiqūn by Allah's <strong style="-webkit-text-fill-color:rgba(255,215,0,0.9);">love</strong>."</p>
+</div>
+
+<!-- Stage 1 -->
+<div style="font-size:9px;letter-spacing:4px;color:var(--gold-dim);font-family:'Cinzel',serif;text-align:center;margin-bottom:12px;">5 STAGES OF ACCOUNTABILITY & PURIFICATION</div>
+
+<div class="pun-stage" id="pn1" onclick="toggleCard('pn1')" style="background:linear-gradient(135deg,rgba(52,152,219,0.07),rgba(14,20,32,0.95));border:1px solid rgba(52,152,219,0.22);animation-delay:.1s;">
+  <div class="pun-header">
+    <div class="pun-icon-box" style="background:rgba(52,152,219,0.1);border:1px solid rgba(52,152,219,0.25);">🌧️</div>
+    <div class="pun-info">
+      <div class="pun-stage-label" style="color:rgba(52,152,219,0.6);">STAGE 01</div>
+      <div class="pun-title">Trials in This Life (Dunyā)</div>
+      <div class="pun-sub">Allah cleanses sins through worldly hardship</div>
+    </div>
+    <div class="pun-arrow">⌄</div>
+  </div>
+  <div class="pun-body">
+    <p class="pun-desc">Allah often purifies a believer's sins through difficulties in this world — illness, loss, hardship, grief. These trials are a mercy in disguise. They reduce the weight of sins so the believer enters the next life lighter.</p>
+    <div class="pun-hadith">
+      "No fatigue, illness, sorrow, sadness, harm, or distress afflicts a Muslim — even the prick of a thorn — except that Allah expiates some of his sins because of it."
+      <span class="pun-hadith-ref">BUKHĀRĪ & MUSLIM</span>
+    </div>
+    <div class="pun-examples">
+      <div class="pun-tag" style="background:rgba(52,152,219,0.07);color:#3498db;border-color:rgba(52,152,219,0.2);">Illness</div>
+      <div class="pun-tag" style="background:rgba(52,152,219,0.07);color:#3498db;border-color:rgba(52,152,219,0.2);">Financial loss</div>
+      <div class="pun-tag" style="background:rgba(52,152,219,0.07);color:#3498db;border-color:rgba(52,152,219,0.2);">Grief & anxiety</div>
+      <div class="pun-tag" style="background:rgba(52,152,219,0.07);color:#3498db;border-color:rgba(52,152,219,0.2);">Setbacks</div>
+    </div>
+    <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.6;">The greater the trial a believer endures with patience, the greater the expiation — and often, the higher the rank in Jannah.</p>
+  </div>
+</div>
+
+<!-- Stage 2 -->
+<div class="pun-stage" id="pn2" onclick="toggleCard('pn2')" style="background:linear-gradient(135deg,rgba(108,52,131,0.08),rgba(14,20,32,0.95));border:1px solid rgba(108,52,131,0.25);animation-delay:.15s;">
+  <div class="pun-header">
+    <div class="pun-icon-box" style="background:rgba(108,52,131,0.1);border:1px solid rgba(108,52,131,0.3);">⚰️</div>
+    <div class="pun-info">
+      <div class="pun-stage-label" style="color:rgba(155,89,182,0.7);">STAGE 02</div>
+      <div class="pun-title">Punishment in the Grave ('Adhāb al-Qabr)</div>
+      <div class="pun-sub">Accountability begins from the moment of burial</div>
+    </div>
+    <div class="pun-arrow">⌄</div>
+  </div>
+  <div class="pun-body">
+    <p class="pun-desc">Some believers may face punishment in the grave for certain sins before the Day of Judgment. This is firmly established in authentic ḥadīth. The grave is either a garden from the gardens of Paradise or a pit from the pits of Hell.</p>
+    <div class="pun-hadith">
+      "They are being punished, and they are not being punished for something major: one used to spread gossip, and the other did not protect himself from urine."
+      <span class="pun-hadith-ref">BUKHĀRĪ — The Prophet ﷺ passing by two graves</span>
+    </div>
+    <div style="font-size:12px;font-family:'Cinzel',serif;color:var(--text-dim);letter-spacing:1.5px;margin-bottom:8px;">CAUSES MENTIONED BY SCHOLARS:</div>
+    <div class="pun-examples">
+      <div class="pun-tag" style="background:rgba(155,89,182,0.07);color:#9b59b6;border-color:rgba(155,89,182,0.2);">Backbiting (Ghība)</div>
+      <div class="pun-tag" style="background:rgba(155,89,182,0.07);color:#9b59b6;border-color:rgba(155,89,182,0.2);">Spreading slander</div>
+      <div class="pun-tag" style="background:rgba(155,89,182,0.07);color:#9b59b6;border-color:rgba(155,89,182,0.2);">Neglecting prayer</div>
+      <div class="pun-tag" style="background:rgba(155,89,182,0.07);color:#9b59b6;border-color:rgba(155,89,182,0.2);">Lying</div>
+      <div class="pun-tag" style="background:rgba(155,89,182,0.07);color:#9b59b6;border-color:rgba(155,89,182,0.2);">Oppression</div>
+    </div>
+    <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.6;margin-top:8px;">This punishment may end before resurrection. Reciting Sūrah Al-Mulk nightly, consistent Qur'an recitation, and dying on Friday are mentioned as means of protection from grave punishment.</p>
+  </div>
+</div>
+
+<!-- Stage 3 -->
+<div class="pun-stage" id="pn3" onclick="toggleCard('pn3')" style="background:linear-gradient(135deg,rgba(243,156,18,0.07),rgba(14,20,32,0.95));border:1px solid rgba(243,156,18,0.22);animation-delay:.2s;">
+  <div class="pun-header">
+    <div class="pun-icon-box" style="background:rgba(243,156,18,0.1);border:1px solid rgba(243,156,18,0.25);">⚖️</div>
+    <div class="pun-info">
+      <div class="pun-stage-label" style="color:rgba(243,156,18,0.7);">STAGE 03</div>
+      <div class="pun-title">The Reckoning on Judgment Day (Ḥisāb)</div>
+      <div class="pun-sub">Every deed — seen and unseen — will be weighed</div>
+    </div>
+    <div class="pun-arrow">⌄</div>
+  </div>
+  <div class="pun-body">
+    <p class="pun-desc">On the Day of Judgment, all deeds are presented. There are two types: a presenting (ʿarḍ) where deeds are shown and forgiveness granted, and a strict questioning (munāqasha) which is itself a punishment. The Muqtaṣid generally receives an easy reckoning; the Sābiqūn may enter without any.</p>
+    <div class="pun-hadith">
+      "Whoever is questioned in detail (munāqasha) on the Day of Judgment will be punished."
+      <span class="pun-hadith-ref">BUKHĀRĪ & MUSLIM</span>
+    </div>
+    <div class="pun-hadith">
+      "As for the one who is given his book in his right hand, he will have an easy reckoning and return to his people joyfully."
+      <span class="pun-hadith-ref">QUR'AN 84:7–9</span>
+    </div>
+    <div style="background:rgba(243,156,18,0.05);border:1px solid rgba(243,156,18,0.15);border-radius:12px;padding:12px 14px;">
+      <div style="font-size:11px;font-family:'Cinzel',serif;color:rgba(243,156,18,0.7);letter-spacing:1.5px;margin-bottom:8px;">THE 70,000 WITHOUT RECKONING</div>
+      <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.6;">The Prophet ﷺ mentioned 70,000 people who will enter Paradise without any reckoning or punishment — those who did not seek ruqya, did not use omens, and put their complete trust in Allah. Many scholars consider these to be from the ranks of the Sābiqūn. <span style="color:rgba(243,156,18,0.8);">(Bukhārī & Muslim)</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- Stage 4 -->
+<div class="pun-stage" id="pn4" onclick="toggleCard('pn4')" style="background:linear-gradient(135deg,rgba(192,57,43,0.08),rgba(14,20,32,0.95));border:1px solid rgba(192,57,43,0.25);animation-delay:.25s;">
+  <div class="pun-header">
+    <div class="pun-icon-box" style="background:rgba(192,57,43,0.1);border:1px solid rgba(192,57,43,0.3);">🔥</div>
+    <div class="pun-info">
+      <div class="pun-stage-label" style="color:rgba(192,57,43,0.7);">STAGE 04</div>
+      <div class="pun-title">Temporary Punishment in Hell</div>
+      <div class="pun-sub">For major sins — believers do not remain forever</div>
+    </div>
+    <div class="pun-arrow">⌄</div>
+  </div>
+  <div class="pun-body">
+    <p class="pun-desc">Some believers who committed major sins without sufficient tawbah may enter Hellfire for a limited period as purification. This is established in authentic ḥadīth. The critical distinction: eternal Hell is only for those who die in disbelief (kufr). A believer — no matter how sinful — will eventually leave.</p>
+    <div class="pun-hadith">
+      "Allah will take out of the Fire whoever had even the weight of a mustard seed of faith in their heart."
+      <span class="pun-hadith-ref">BUKHĀRĪ & MUSLIM</span>
+    </div>
+    <div style="font-size:12px;font-family:'Cinzel',serif;color:var(--text-dim);letter-spacing:1.5px;margin-bottom:8px;">MAJOR SINS THAT MAY LEAD HERE:</div>
+    <div class="pun-examples">
+      <div class="pun-tag" style="background:rgba(192,57,43,0.07);color:#e74c3c;border-color:rgba(192,57,43,0.2);">Abandoning prayer</div>
+      <div class="pun-tag" style="background:rgba(192,57,43,0.07);color:#e74c3c;border-color:rgba(192,57,43,0.2);">Adultery / Zinā</div>
+      <div class="pun-tag" style="background:rgba(192,57,43,0.07);color:#e74c3c;border-color:rgba(192,57,43,0.2);">Ribā (interest)</div>
+      <div class="pun-tag" style="background:rgba(192,57,43,0.07);color:#e74c3c;border-color:rgba(192,57,43,0.2);">Oppression</div>
+      <div class="pun-tag" style="background:rgba(192,57,43,0.07);color:#e74c3c;border-color:rgba(192,57,43,0.2);">Murder</div>
+      <div class="pun-tag" style="background:rgba(192,57,43,0.07);color:#e74c3c;border-color:rgba(192,57,43,0.2);">Arrogance</div>
+      <div class="pun-tag" style="background:rgba(192,57,43,0.07);color:#e74c3c;border-color:rgba(192,57,43,0.2);">Harming people</div>
+    </div>
+    <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.6;margin-top:8px;">This is why the scholars say: the believer lives between <em>fear</em> (of Allah's justice) and <em>hope</em> (of Allah's mercy) — never too secure, never despairing.</p>
+  </div>
+</div>
+
+<!-- Stage 5 -->
+<div class="pun-stage" id="pn5" onclick="toggleCard('pn5')" style="background:linear-gradient(135deg,rgba(39,174,96,0.07),rgba(14,20,32,0.95));border:1px solid rgba(39,174,96,0.22);animation-delay:.3s;">
+  <div class="pun-header">
+    <div class="pun-icon-box" style="background:rgba(39,174,96,0.1);border:1px solid rgba(39,174,96,0.25);">🌉</div>
+    <div class="pun-info">
+      <div class="pun-stage-label" style="color:rgba(39,174,96,0.7);">STAGE 05</div>
+      <div class="pun-title">The Qanṭarah — Bridge of Purification</div>
+      <div class="pun-sub">Final settling of accounts before entering Paradise</div>
+    </div>
+    <div class="pun-arrow">⌄</div>
+  </div>
+  <div class="pun-body">
+    <p class="pun-desc">After the Ṣirāṭ (the bridge over Hell), there is a final station — the Qanṭarah — where believers who have passed the Hellfire settle any remaining injustices between each other. Rights of people (ḥuqūq al-'ibād) must be settled before entering the eternal home.</p>
+    <div class="pun-hadith">
+      "When the believers are saved from the Fire, they will be stopped at a bridge between Paradise and Hell, and will settle their mutual wrongs. Then, when they have been purified and cleansed, they will be permitted to enter Paradise."
+      <span class="pun-hadith-ref">BUKHĀRĪ</span>
+    </div>
+    <div style="background:rgba(39,174,96,0.05);border:1px solid rgba(39,174,96,0.15);border-radius:12px;padding:12px 14px;margin-top:4px;">
+      <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.6;">This is why the Prophet ﷺ warned extensively about rights of people — debts, backbiting, oppression. On that day, deeds are the only currency. <span style="color:rgba(39,174,96,0.8);">Rights of Allah may be forgiven by Him; rights of people must be settled.</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- Hope card -->
+<div style="background:linear-gradient(135deg,rgba(255,215,0,0.07),rgba(14,20,32,0.9));border:1px solid rgba(255,215,0,0.18);border-radius:18px;padding:20px;margin-top:6px;margin-bottom:24px;text-align:center;">
+  <div style="font-size:9px;letter-spacing:4px;color:var(--gold-dim);font-family:'Cinzel',serif;margin-bottom:12px;">THE ULTIMATE HOPE</div>
+  <p style="font-family:'EB Garamond',serif;font-style:italic;font-size:15px;color:var(--text);line-height:1.85;margin-bottom:10px;">"My mercy surpasses My wrath."</p>
+  <p style="font-size:10px;color:var(--gold-dim);letter-spacing:2px;font-family:'Lato',sans-serif;margin-bottom:14px;">ḤADĪTH QUDSĪ — BUKHĀRĪ & MUSLIM</p>
+  <p style="font-family:'EB Garamond',serif;font-style:italic;font-size:15px;color:var(--text);line-height:1.85;margin-bottom:10px;">"Your Lord has prescribed mercy upon Himself."</p>
+  <p style="font-size:10px;color:var(--gold-dim);letter-spacing:2px;font-family:'Lato',sans-serif;margin-bottom:14px;">QUR'AN 6:54</p>
+  <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.15),transparent);margin-bottom:14px;"></div>
+  <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.7;">The believer walks this life in the balance between <span style="color:rgba(192,57,43,0.8);">fear of Allah's justice</span> and <span style="color:rgba(255,215,0,0.8);">hope in Allah's mercy</span> — never so fearful as to despair, never so hopeful as to become heedless.</p>
+</div>
+```
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <div class="footer">
+    <div class="footer-ornament">✦ ✦ ✦</div>
+    <div class="footer-text">May Allah make us among the Sābiqūn</div>
+  </div>
+
+</div><!-- /wrap -->
+
+<script>
+/* ── QUALITIES DATA ── */
+const QUALITIES = [
+  {
+    id:'q1', cat:'social', icon:'🤲', title:'Give Charity in Ease & Hardship',
+    desc:'The best believers give from what they love, in both times of abundance and times of scarcity. Charity is not a surplus act — it is a constant. It purifies wealth, trains the ego to release attachment, and keeps the heart connected to those in need.',
+    hadith:'"Charity does not decrease wealth." — The Prophet ﷺ (Muslim)',
+  },
+  {
+    id:'q2', cat:'character', icon:'❤️', title:'Control Their Anger',
+    desc:'Anger is a fire. The strong person is not one who can overpower others — it is the one who can overpower themselves when rage rises. Controlling anger is one of the qualities explicitly praised in Surah Āl \'Imrān (3:134) as a sign of the best believers.',
+    hadith:'"The strong person is not the one who overcomes others. The strong person is the one who controls himself when angry." — Bukhārī & Muslim',
+  },
+  {
+    id:'q3', cat:'character', icon:'✨', title:'Forgive Others',
+    desc:'Forgiveness is not weakness — it is one of the highest acts of strength. The one who forgives when they have the power to take revenge has achieved something extraordinary. Allah loves the pardoners, and pardoning others is directly linked to receiving Allah\'s own forgiveness.',
+    hadith:'"Whoever suppresses his anger, Allah will conceal his faults." — Aḥmad',
+  },
+  {
+    id:'q4', cat:'character', icon:'⚡', title:'Do Acts of Excellence (Iḥsān)',
+    desc:'Iḥsān means to bring beauty and perfection into every act — to go beyond the minimum. It means being excellent in worship, in dealings, in service, in kindness. Allah is beautiful and loves beauty. The Muḥsin finds joy in raising the standard of every good deed.',
+    hadith:'"Indeed, Allah has prescribed excellence (iḥsān) in everything." — Muslim',
+  },
+  {
+    id:'q5', cat:'spiritual', icon:'🌙', title:'Remember Allah After Sin',
+    desc:'The best believers are not those who never sin — they are those who do not remain in sin. When they fall, they immediately remember Allah. That remembrance is the turning point. It breaks the grip of the nafs and opens the gate of mercy.',
+    hadith:'"Every son of Adam sins, and the best of those who sin are those who repent." — Tirmidhī',
+  },
+  {
+    id:'q6', cat:'spiritual', icon:'💧', title:'Seek Forgiveness Quickly',
+    desc:'Delaying tawbah is one of the traps of shaytān. The foremost believers do not leave a sin uncovered — they seek forgiveness immediately. This swiftness reflects a heart that is alive to its connection with Allah and unwilling to let distance grow.',
+    hadith:'"Allah spreads out His hand at night to accept the repentance of the one who sinned during the day." — Muslim',
+  },
+  {
+    id:'q7', cat:'worship', icon:'🕌', title:'Salah on Time',
+    desc:'Prayer at its appointed time is the single most beloved act to Allah according to an authentic ḥadīth. The Sābiqūn do not delay, rush, or treat salāh as a chore. Each prayer is a private audience with the King of Kings — and they prepare for it as such.',
+    hadith:'"The deed most beloved to Allah is prayer at its appointed time." — Bukhārī & Muslim',
+  },
+  {
+    id:'q8', cat:'worship', icon:'🤍', title:'Khushū\' in Prayer',
+    desc:'Khushū\' is the soul of prayer. Without it, prayer is a set of movements. With it, prayer becomes a conversation, a healing, a refuge. It means the heart is present — not planning dinner or replaying arguments — but standing before Allah with full awareness.',
+    hadith:'"The first thing that will be lifted from this Ummah will be khushū\', until you see no one with khushū\'." — Ṭabarānī',
+  },
+  {
+    id:'q9', cat:'worship', icon:'📿', title:'Dhikr & Remembrance',
+    desc:'The tongue of the Sābiqūn is never dry from the remembrance of Allah. Dhikr is the nourishment of the heart. Allah says: "Verily, in the remembrance of Allah do hearts find rest." (13:28). Even between acts, the heart stays oriented.',
+    hadith:'"Shall I not tell you of the best of your deeds? Remembrance of Allah." — Ibn Mājah',
+  },
+  {
+    id:'q10', cat:'worship', icon:'📖', title:'Qur\'an Reflection (Tadabbur)',
+    desc:'Reading the Qur\'an for reward is good. Reciting it with tajwīd is better. But pondering its meanings — letting it speak to your life, change your views, shape your character — is what the Sābiqūn do. The Qur\'an is not a text to be finished; it is a companion to be lived with.',
+    hadith:'"The best of you are those who learn the Qur\'an and teach it." — Bukhārī',
+  },
+  {
+    id:'q11', cat:'discipline', icon:'👁️', title:'Lower the Gaze',
+    desc:'The eyes are a gateway to the heart. What enters through them shapes the inner landscape. Lowering the gaze is not just about avoiding the ḥarām — it is an act of protecting the heart from distraction, desire, and spiritual numbness.',
+    hadith:'"The adultery of the eyes is looking [at what is forbidden]." — Bukhārī & Muslim',
+  },
+  {
+    id:'q12', cat:'discipline', icon:'🛡️', title:'Control Desires',
+    desc:'The nafs pulls toward comfort, excess, and immediate gratification. The Sābiqūn have trained themselves to delay, to choose what is better over what is pleasant. This is the essence of discipline — the ability to say no to the self in obedience to Allah.',
+    hadith:'"The intelligent person is one who subjugates his soul and works for what comes after death." — Tirmidhī',
+  },
+  {
+    id:'q13', cat:'discipline', icon:'⚖️', title:'Avoid Excess (Isrāf)',
+    desc:'Excess in food, sleep, speech, spending — all of it dulls the heart. The foremost believers live with intentional simplicity, not because the world is forbidden, but because they know that the less the nafs is fed, the more the rūḥ (spirit) is nourished.',
+    hadith:'"The son of Adam fills no vessel worse than his stomach." — Tirmidhī',
+  },
+  {
+    id:'q14', cat:'spiritual', icon:'🌟', title:'Avoid Sins',
+    desc:'The Sābiqūn develop a hatred for sin — not just a strategy to avoid it. When sins become genuinely repulsive to the heart, the struggle against them becomes lighter. This level of spiritual aversion is a gift from Allah given to those who consistently strive.',
+    hadith:'"Leave what makes you doubt for what does not make you doubt." — Tirmidhī',
+  },
+  {
+    id:'q15', cat:'social', icon:'🤝', title:'Help Others',
+    desc:'Service to creation is a path to the Creator. The best believers are those whose goodness extends outward — they notice needs, they show up, they ease burdens. Allah is in the aid of a servant as long as that servant is in the aid of his brother.',
+    hadith:'"Allah is in the aid of a servant as long as the servant is in the aid of his brother." — Muslim',
+  },
+];
+
+let activeFilter = 'all';
+
+function renderQualities(filter){
+  const list = document.getElementById('qualitiesList');
+  const items = filter==='all' ? QUALITIES : QUALITIES.filter(q=>q.cat===filter);
+  list.innerHTML = items.map((q,i)=>`
+    <div class="quality-item" id="${q.id}" style="background:var(--bg2);border:1px solid rgba(255,255,255,0.07);animation-delay:${i*0.05}s" onclick="toggleQuality('${q.id}')">
+      <div class="q-header">
+        <div class="q-icon">${q.icon}</div>
+        <div class="q-label">
+          <div class="q-title">${q.title}</div>
+          <div class="q-cat">${q.cat.toUpperCase()}</div>
+        </div>
+        <span class="q-arrow">⌄</span>
+      </div>
+      <div class="q-body">
+        <p class="q-desc">${q.desc}</p>
+        <div class="q-hadith">${q.hadith}<span class="q-hadith-ref">PROPHETIC GUIDANCE</span></div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterQ(cat, btn){
+  activeFilter = cat;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderQualities(cat);
+}
+
+function toggleQuality(id){
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+
+function toggleCard(id){
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+
+function toggleDepth(id){
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+
+function showSection(id, btn){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// INIT
+renderQualities('all');
+</script>
+
+</body>
+</html>
