@@ -276,6 +276,81 @@ body{background:#080c14;font-family:'Lato',sans-serif;min-height:100vh;overflow-
 .source-detail{font-size:12px;color:var(–text-dim);font-family:‘EB Garamond’,serif;line-height:1.6;}
 .source-tag{display:inline-block;padding:2px 9px;border-radius:100px;font-size:9px;font-family:‘Cinzel’,serif;letter-spacing:1px;background:rgba(255,215,0,0.07);color:var(–gold-dim);border:1px solid rgba(255,215,0,0.15);margin-top:6px;}
 
+/* ── HEART SECTION ── */
+.heart-intro{font-size:13px;color:var(–text-dim);line-height:1.8;padding:20px 0 6px;text-align:center;}
+.heart-card{border-radius:20px;margin-bottom:14px;overflow:hidden;cursor:pointer;animation:fadeUp .45s ease both;}
+.heart-header{display:flex;align-items:center;gap:14px;padding:18px 18px;}
+.heart-icon{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.heart-info{flex:1;}
+.heart-title{font-size:14px;font-family:‘Cinzel’,serif;font-weight:700;color:rgba(255,255,255,0.88);letter-spacing:.4px;}
+.heart-sub{font-size:10px;color:var(–text-dim);letter-spacing:1.5px;margin-top:3px;}
+.heart-arrow{font-size:14px;color:var(–text-dim);transition:transform .3s ease;}
+.heart-card.open .heart-arrow{transform:rotate(180deg);}
+.heart-body{display:none;padding:0 18px 18px;}
+.heart-card.open .heart-body{display:block;animation:expandDown .3s ease both;}
+.heart-desc{font-family:‘EB Garamond’,serif;font-size:15px;line-height:1.85;color:var(–text);margin-bottom:12px;}
+.signs-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+.sign-row{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;}
+.sign-dot{font-size:11px;flex-shrink:0;margin-top:2px;}
+.sign-text{font-size:13px;line-height:1.55;color:var(–text-dim);}
+
+/* ── COMPANIONS SECTION ── */
+.comp-card{border-radius:20px;margin-bottom:16px;overflow:hidden;cursor:pointer;animation:fadeUp .45s ease both;}
+.comp-header{display:flex;align-items:center;gap:14px;padding:18px 18px;}
+.comp-avatar{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;border:2px solid;}
+.comp-info{flex:1;}
+.comp-name{font-size:16px;font-family:‘Cinzel’,serif;font-weight:800;letter-spacing:.5px;margin-bottom:2px;}
+.comp-arabic-name{font-size:14px;font-family:‘EB Garamond’,serif;color:var(–text-dim);}
+.comp-rank{font-size:10px;letter-spacing:2px;margin-top:3px;}
+.comp-arrow{font-size:14px;color:var(–text-dim);transition:transform .3s ease;}
+.comp-card.open .comp-arrow{transform:rotate(180deg);}
+.comp-body{display:none;padding:0 18px 18px;}
+.comp-card.open .comp-body{display:block;animation:expandDown .3s ease both;}
+.comp-desc{font-family:‘EB Garamond’,serif;font-size:15px;line-height:1.85;color:var(–text);margin-bottom:12px;}
+.comp-qualities{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px;}
+.comp-q-tag{padding:4px 11px;border-radius:100px;font-size:10px;font-family:‘Lato’,sans-serif;border:1px solid;}
+.comp-hadith{border-left:2px solid rgba(255,215,0,0.3);padding:11px 14px;background:rgba(255,215,0,0.04);border-radius:0 10px 10px 0;font-family:‘EB Garamond’,serif;font-style:italic;font-size:14px;color:rgba(232,224,208,0.72);line-height:1.7;margin-bottom:10px;}
+.comp-hadith-ref{display:block;font-style:normal;font-size:10px;color:var(–gold-dim);letter-spacing:2px;margin-top:5px;font-family:‘Lato’,sans-serif;}
+
+/* ── SINS SECTION ── */
+.sins-intro{font-size:13px;color:var(–text-dim);line-height:1.8;padding:20px 0 6px;text-align:center;}
+.sin-card{border-radius:18px;margin-bottom:12px;overflow:hidden;cursor:pointer;animation:fadeUp .4s ease both;}
+.sin-header{display:flex;align-items:center;gap:13px;padding:16px 17px;}
+.sin-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.sin-label{flex:1;}
+.sin-title{font-size:13px;font-family:‘Cinzel’,serif;font-weight:700;color:rgba(255,255,255,0.88);letter-spacing:.3px;}
+.sin-sub{font-size:10px;color:var(–text-dim);letter-spacing:1.5px;margin-top:3px;}
+.sin-arrow{font-size:13px;color:var(–text-dim);transition:transform .3s ease;}
+.sin-card.open .sin-arrow{transform:rotate(180deg);}
+.sin-body{display:none;padding:0 17px 17px;}
+.sin-card.open .sin-body{display:block;animation:expandDown .3s ease both;}
+.sin-desc{font-family:‘EB Garamond’,serif;font-size:15px;line-height:1.85;color:var(–text);margin-bottom:12px;}
+.sin-effects{display:flex;flex-direction:column;gap:7px;margin-bottom:12px;}
+.sin-effect{display:flex;align-items:flex-start;gap:10px;padding:9px 12px;border-radius:10px;background:rgba(192,57,43,0.05);border:1px solid rgba(192,57,43,0.12);}
+.sin-effect-icon{font-size:12px;flex-shrink:0;margin-top:2px;}
+.sin-effect-text{font-size:13px;color:var(–text-dim);line-height:1.5;}
+.sin-hadith{border-left:2px solid rgba(192,57,43,0.3);padding:11px 14px;background:rgba(192,57,43,0.04);border-radius:0 10px 10px 0;font-family:‘EB Garamond’,serif;font-style:italic;font-size:14px;color:rgba(232,224,208,0.7);line-height:1.7;margin-bottom:10px;}
+.sin-hadith-ref{display:block;font-style:normal;font-size:10px;color:rgba(192,57,43,0.6);letter-spacing:2px;margin-top:5px;font-family:‘Lato’,sans-serif;}
+
+/* ── DUA SECTION ── */
+.dua-intro{font-size:13px;color:var(–text-dim);line-height:1.8;padding:20px 0 6px;text-align:center;}
+.dua-level-label{font-size:9px;letter-spacing:4px;font-family:‘Cinzel’,serif;text-align:center;padding:14px 0 10px;}
+.dua-card{border-radius:18px;margin-bottom:12px;overflow:hidden;cursor:pointer;animation:fadeUp .4s ease both;}
+.dua-header{display:flex;align-items:center;gap:13px;padding:16px 17px;}
+.dua-num{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:14px;font-family:‘Cinzel’,serif;font-weight:900;flex-shrink:0;}
+.dua-label{flex:1;}
+.dua-title{font-size:13px;font-family:‘Cinzel’,serif;font-weight:700;color:rgba(255,255,255,0.88);letter-spacing:.3px;}
+.dua-purpose{font-size:10px;color:var(–text-dim);letter-spacing:1px;margin-top:3px;}
+.dua-arrow{font-size:13px;color:var(–text-dim);transition:transform .3s ease;}
+.dua-card.open .dua-arrow{transform:rotate(180deg);}
+.dua-body{display:none;padding:0 17px 17px;}
+.dua-card.open .dua-body{display:block;animation:expandDown .3s ease both;}
+.dua-arabic{font-family:‘EB Garamond’,serif;font-size:22px;color:rgba(255,215,0,0.8);line-height:1.9;text-align:right;direction:rtl;margin-bottom:10px;padding:14px 16px;border-radius:12px;background:rgba(255,215,0,0.04);border:1px solid rgba(255,215,0,0.12);}
+.dua-transliteration{font-size:13px;color:rgba(255,215,0,0.55);font-style:italic;font-family:‘EB Garamond’,serif;margin-bottom:8px;letter-spacing:.5px;}
+.dua-translation{font-family:‘EB Garamond’,serif;font-size:15px;line-height:1.8;color:var(–text);margin-bottom:10px;font-style:italic;}
+.dua-context{font-size:13px;color:var(–text-dim);line-height:1.6;font-family:‘EB Garamond’,serif;margin-bottom:8px;}
+.dua-source{font-size:10px;color:var(–gold-dim);letter-spacing:2px;font-family:‘Lato’,sans-serif;}
+
 /* hidden class */
 .hidden{display:none!important;}
 </style>
@@ -323,6 +398,10 @@ body{background:#080c14;font-family:'Lato',sans-serif;min-height:100vh;overflow-
       <button class="nav-btn" onclick="showSection('qualities',this)">Qualities</button>
       <button class="nav-btn" onclick="showSection('depth',this)">Depth</button>
       <button class="nav-btn" onclick="showSection('path',this)">The Path</button>
+      <button class="nav-btn" onclick="showSection('heart',this)">The Heart</button>
+      <button class="nav-btn" onclick="showSection('companions',this)">Companions</button>
+      <button class="nav-btn" onclick="showSection('sins',this)">Sins</button>
+      <button class="nav-btn" onclick="showSection('dua',this)">Du'ā</button>
       <button class="nav-btn" onclick="showSection('glossary',this)">Glossary</button>
       <button class="nav-btn" onclick="showSection('sources',this)">Sources</button>
     </div>
@@ -1199,6 +1278,584 @@ body{background:#080c14;font-family:'Lato',sans-serif;min-height:100vh;overflow-
   <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.15),transparent);margin-bottom:14px;"></div>
   <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.7;">The believer walks this life in the balance between <span style="color:rgba(192,57,43,0.8);">fear of Allah's justice</span> and <span style="color:rgba(255,215,0,0.8);">hope in Allah's mercy</span> — never so fearful as to despair, never so hopeful as to become heedless.</p>
 </div>
+```
+
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <!-- SECTION: HEART -->
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <div class="section" id="sec-heart">
+    <p class="heart-intro">The Qur'an mentions the heart (qalb) over 130 times. Everything in this guide — the levels, the nafs, the path — ultimately comes down to one question: what is the state of your heart?</p>
+    <div class="divider"></div>
+
+```
+<div style="background:rgba(255,215,0,0.04);border:1px solid rgba(255,215,0,0.14);border-radius:16px;padding:16px 18px;margin-bottom:18px;">
+  <div class="arabic-text">أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</div>
+  <p style="font-family:'EB Garamond',serif;font-style:italic;font-size:15px;color:var(--text);line-height:1.75;margin-top:8px;margin-bottom:6px;">"Verily, in the remembrance of Allah do hearts find rest."</p>
+  <span style="font-size:10px;color:var(--gold-dim);letter-spacing:2px;font-family:'Lato',sans-serif;">QUR'AN 13:28</span>
+</div>
+
+<div class="heart-card" id="hrt1" onclick="toggleCard('hrt1')" style="background:linear-gradient(135deg,rgba(255,215,0,0.06),rgba(14,20,32,0.95));border:1px solid rgba(255,215,0,0.18);animation-delay:.1s;">
+  <div class="heart-header">
+    <div class="heart-icon" style="background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.2);">💛</div>
+    <div class="heart-info">
+      <div class="heart-title" style="color:#FFD700;">What Is the Qalb?</div>
+      <div class="heart-sub">THE KING OF THE BODY</div>
+    </div>
+    <div class="heart-arrow">⌄</div>
+  </div>
+  <div class="heart-body">
+    <p class="heart-desc">The Prophet ﷺ said: <em>"Indeed in the body there is a piece of flesh — if it is sound, the whole body is sound. If it is corrupt, the whole body is corrupt. Indeed it is the heart."</em> (Bukhārī & Muslim)</p>
+    <p class="heart-desc">The qalb in Islamic spirituality is the spiritual centre of the human being — the seat of faith (īmān), intention (niyyah), love, fear, hope, and certainty (yaqīn). Every action flows from it. Every sin affects it. The Arabic word qalb comes from the root meaning "to turn" — the heart is constantly turning, either toward Allah or away from Him.</p>
+    <div style="background:rgba(255,215,0,0.04);border:1px solid rgba(255,215,0,0.12);border-radius:12px;padding:13px 15px;">
+      <p style="font-family:'EB Garamond',serif;font-size:14px;color:rgba(232,224,208,0.7);line-height:1.7;font-style:italic;">"The hearts are between two fingers of the Most Merciful — He turns them however He wills." The Prophet ﷺ would frequently say: "O Turner of hearts, keep my heart firm upon Your religion."</p>
+      <span style="display:block;font-size:10px;color:var(--gold-dim);letter-spacing:2px;margin-top:6px;font-family:'Lato',sans-serif;">MUSLIM & TIRMIDHĪ</span>
+    </div>
+  </div>
+</div>
+
+<div class="heart-card" id="hrt2" onclick="toggleCard('hrt2')" style="background:linear-gradient(135deg,rgba(39,174,96,0.07),rgba(14,20,32,0.95));border:1px solid rgba(39,174,96,0.22);animation-delay:.15s;">
+  <div class="heart-header">
+    <div class="heart-icon" style="background:rgba(39,174,96,0.1);border:1px solid rgba(39,174,96,0.25);">🌱</div>
+    <div class="heart-info">
+      <div class="heart-title" style="color:#2ecc71;">Signs of a Living Heart — Al-Qalb al-Salīm</div>
+      <div class="heart-sub">THE SOUND HEART</div>
+    </div>
+    <div class="heart-arrow">⌄</div>
+  </div>
+  <div class="heart-body">
+    <p class="heart-desc">Allah mentions the "sound heart" (qalb salīm) as the only thing of real value on the Day of Judgment: <em>"The Day when neither wealth nor children will benefit — except one who comes to Allah with a sound heart."</em> (26:88–89). Scholars describe it as a heart free from shirk, arrogance, and love of dunya — and filled with love of Allah, sincerity, and longing for the Hereafter.</p>
+    <div class="signs-grid">
+      <div class="sign-row" style="background:rgba(39,174,96,0.05);border:1px solid rgba(39,174,96,0.12);"><span class="sign-dot" style="color:#2ecc71;">✦</span><span class="sign-text">Feels pain when a sin is committed — conscience is alive and sensitive</span></div>
+      <div class="sign-row" style="background:rgba(39,174,96,0.05);border:1px solid rgba(39,174,96,0.12);"><span class="sign-dot" style="color:#2ecc71;">✦</span><span class="sign-text">Finds genuine sweetness in worship — salāh, Qur'an, dhikr feel like nourishment</span></div>
+      <div class="sign-row" style="background:rgba(39,174,96,0.05);border:1px solid rgba(39,174,96,0.12);"><span class="sign-dot" style="color:#2ecc71;">✦</span><span class="sign-text">Remembers death frequently and prepares for it without fear</span></div>
+      <div class="sign-row" style="background:rgba(39,174,96,0.05);border:1px solid rgba(39,174,96,0.12);"><span class="sign-dot" style="color:#2ecc71;">✦</span><span class="sign-text">The Qur'an moves it deeply — tears come naturally during recitation</span></div>
+      <div class="sign-row" style="background:rgba(39,174,96,0.05);border:1px solid rgba(39,174,96,0.12);"><span class="sign-dot" style="color:#2ecc71;">✦</span><span class="sign-text">Feels genuinely restless with sin and at peace with obedience</span></div>
+      <div class="sign-row" style="background:rgba(39,174,96,0.05);border:1px solid rgba(39,174,96,0.12);"><span class="sign-dot" style="color:#2ecc71;">✦</span><span class="sign-text">Prefers quiet time with Allah over heedless company and entertainment</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="heart-card" id="hrt3" onclick="toggleCard('hrt3')" style="background:linear-gradient(135deg,rgba(192,57,43,0.07),rgba(14,20,32,0.95));border:1px solid rgba(192,57,43,0.22);animation-delay:.2s;">
+  <div class="heart-header">
+    <div class="heart-icon" style="background:rgba(192,57,43,0.1);border:1px solid rgba(192,57,43,0.25);">🪨</div>
+    <div class="heart-info">
+      <div class="heart-title" style="color:#e74c3c;">Signs of a Hard or Dead Heart</div>
+      <div class="heart-sub">AL-QALB AL-QĀSĪ</div>
+    </div>
+    <div class="heart-arrow">⌄</div>
+  </div>
+  <div class="heart-body">
+    <p class="heart-desc">The Qur'an warns: <em>"Then your hearts hardened after that, being like stones or even harder."</em> (2:74). Hardness of heart is one of the greatest spiritual dangers — it is often gradual and unnoticed until severe. Ibn al-Qayyim wrote: <em>"The heart becomes sick just as the body becomes sick — its cure is tawbah and protection. It becomes rusty — its polish is dhikr."</em></p>
+    <div class="signs-grid">
+      <div class="sign-row" style="background:rgba(192,57,43,0.05);border:1px solid rgba(192,57,43,0.12);"><span class="sign-dot" style="color:#e74c3c;">◌</span><span class="sign-text">No longer feels guilt or pain when sinning — numbness has set in</span></div>
+      <div class="sign-row" style="background:rgba(192,57,43,0.05);border:1px solid rgba(192,57,43,0.12);"><span class="sign-dot" style="color:#e74c3c;">◌</span><span class="sign-text">Worship feels hollow — no khushū', no connection, going through motions</span></div>
+      <div class="sign-row" style="background:rgba(192,57,43,0.05);border:1px solid rgba(192,57,43,0.12);"><span class="sign-dot" style="color:#e74c3c;">◌</span><span class="sign-text">The Qur'an does not move it — no tears, no reflection, just words</span></div>
+      <div class="sign-row" style="background:rgba(192,57,43,0.05);border:1px solid rgba(192,57,43,0.12);"><span class="sign-dot" style="color:#e74c3c;">◌</span><span class="sign-text">Death and the Hereafter rarely enter the mind — heedlessness (ghafla) dominates</span></div>
+      <div class="sign-row" style="background:rgba(192,57,43,0.05);border:1px solid rgba(192,57,43,0.12);"><span class="sign-dot" style="color:#e74c3c;">◌</span><span class="sign-text">Deeply attached to dunya — wealth, status, pleasure are the primary concerns</span></div>
+      <div class="sign-row" style="background:rgba(192,57,43,0.05);border:1px solid rgba(192,57,43,0.12);"><span class="sign-dot" style="color:#e74c3c;">◌</span><span class="sign-text">Islamic reminders feel burdensome — entertainment is preferred over 'ibādah</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="heart-card" id="hrt4" onclick="toggleCard('hrt4')" style="background:linear-gradient(135deg,rgba(52,152,219,0.07),rgba(14,20,32,0.95));border:1px solid rgba(52,152,219,0.22);animation-delay:.25s;">
+  <div class="heart-header">
+    <div class="heart-icon" style="background:rgba(52,152,219,0.1);border:1px solid rgba(52,152,219,0.25);">💧</div>
+    <div class="heart-info">
+      <div class="heart-title" style="color:#3498db;">What Softens the Heart</div>
+      <div class="heart-sub">TESTED CURES FROM QUR'AN & SUNNAH</div>
+    </div>
+    <div class="heart-arrow">⌄</div>
+  </div>
+  <div class="heart-body">
+    <p class="heart-desc">These are not suggestions — they are tested, authenticated cures for the heart. Every single one is established in Qur'an or Sunnah.</p>
+    <div class="signs-grid">
+      <div class="sign-row" style="background:rgba(52,152,219,0.05);border:1px solid rgba(52,152,219,0.12);"><span class="sign-dot" style="color:#3498db;">✦</span><span class="sign-text"><strong style="color:rgba(255,255,255,0.75);">Qur'an with tadabbur</strong> — read slowly with reflection, not for quantity</span></div>
+      <div class="sign-row" style="background:rgba(52,152,219,0.05);border:1px solid rgba(52,152,219,0.12);"><span class="sign-dot" style="color:#3498db;">✦</span><span class="sign-text"><strong style="color:rgba(255,255,255,0.75);">Remembering death</strong> — visit graves, attend janāzah prayers regularly</span></div>
+      <div class="sign-row" style="background:rgba(52,152,219,0.05);border:1px solid rgba(52,152,219,0.12);"><span class="sign-dot" style="color:#3498db;">✦</span><span class="sign-text"><strong style="color:rgba(255,255,255,0.75);">Serving the poor</strong> — sit with those in hardship, give generously and often</span></div>
+      <div class="sign-row" style="background:rgba(52,152,219,0.05);border:1px solid rgba(52,152,219,0.12);"><span class="sign-dot" style="color:#3498db;">✦</span><span class="sign-text"><strong style="color:rgba(255,255,255,0.75);">Abundant dhikr</strong> — especially morning/evening adhkār from the Sunnah</span></div>
+      <div class="sign-row" style="background:rgba(52,152,219,0.05);border:1px solid rgba(52,152,219,0.12);"><span class="sign-dot" style="color:#3498db;">✦</span><span class="sign-text"><strong style="color:rgba(255,255,255,0.75);">Reducing food and speech</strong> — excess in both hardens the heart significantly</span></div>
+      <div class="sign-row" style="background:rgba(52,152,219,0.05);border:1px solid rgba(52,152,219,0.12);"><span class="sign-dot" style="color:#3498db;">✦</span><span class="sign-text"><strong style="color:rgba(255,255,255,0.75);">Righteous company</strong> — the heart takes the colour of who it sits with</span></div>
+      <div class="sign-row" style="background:rgba(52,152,219,0.05);border:1px solid rgba(52,152,219,0.12);"><span class="sign-dot" style="color:#3498db;">✦</span><span class="sign-text"><strong style="color:rgba(255,255,255,0.75);">Tahajjud</strong> — the night prayer softens and illuminates the heart unlike anything else</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="heart-card" id="hrt5" onclick="toggleCard('hrt5')" style="background:linear-gradient(135deg,rgba(255,215,0,0.06),rgba(14,20,32,0.95));border:1px solid rgba(255,215,0,0.18);animation-delay:.3s;">
+  <div class="heart-header">
+    <div class="heart-icon" style="background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.2);">🔗</div>
+    <div class="heart-info">
+      <div class="heart-title" style="color:#FFD700;">The Heart & The Three Levels</div>
+      <div class="heart-sub">HOW IT ALL CONNECTS</div>
+    </div>
+    <div class="heart-arrow">⌄</div>
+  </div>
+  <div class="heart-body">
+    <p class="heart-desc">Your level is not determined by how many deeds you do — it is determined by the state of your heart. The heart shapes everything. And the heart is shaped by your choices.</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;">
+      <div style="padding:13px 15px;border-radius:13px;background:rgba(192,57,43,0.06);border:1px solid rgba(192,57,43,0.2);">
+        <div style="font-size:11px;font-family:'Cinzel',serif;color:#e74c3c;letter-spacing:1px;margin-bottom:5px;">ZĀLIM → HARD OR DISEASED HEART</div>
+        <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.6;">Dominated by desires and heedlessness. Sins accumulate, leaving black dots. The nafs al-Ammārah commands toward evil and the heart follows without resistance.</p>
+      </div>
+      <div style="padding:13px 15px;border-radius:13px;background:rgba(230,126,34,0.06);border:1px solid rgba(230,126,34,0.2);">
+        <div style="font-size:11px;font-family:'Cinzel',serif;color:#e67e22;letter-spacing:1px;margin-bottom:5px;">MUQTAṢID → STRUGGLING HEART</div>
+        <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.6;">Alive but inconsistent. The nafs al-Lawwāmah reproaches it after sin. It is in battle — sometimes winning, sometimes losing. Not dead, but not fully illuminated.</p>
+      </div>
+      <div style="padding:13px 15px;border-radius:13px;background:rgba(255,215,0,0.06);border:1px solid rgba(255,215,0,0.2);">
+        <div style="font-size:11px;font-family:'Cinzel',serif;color:#FFD700;letter-spacing:1px;margin-bottom:5px;">SĀBIQŪN → THE SOUND, LIVING HEART</div>
+        <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.6;">The qalb salīm. Fully alive and fully oriented toward Allah. The nafs al-Muṭma'innah is at peace. Allah addresses this heart at death: <em>"Return to your Lord, pleased and pleasing."</em></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin-bottom:24px;"></div>
+```
+
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <!-- SECTION: COMPANIONS -->
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <div class="section" id="sec-companions">
+    <p class="sec-intro">The Companions are the living proof that the Sābiqūn are real people — not abstract ideals. They had fears, struggles, and sins. Yet they reached the highest ranks. Their stories are our roadmap.</p>
+    <div class="divider"></div>
+
+```
+<div class="comp-card" id="cp1" onclick="toggleCard('cp1')" style="background:linear-gradient(135deg,rgba(255,215,0,0.07),rgba(14,20,32,0.95));border:1px solid rgba(255,215,0,0.22);animation-delay:.1s;">
+  <div class="comp-header">
+    <div class="comp-avatar" style="background:rgba(255,215,0,0.1);border-color:rgba(255,215,0,0.35);color:#FFD700;">☀</div>
+    <div class="comp-info">
+      <div class="comp-name" style="color:#FFD700;">Abū Bakr aṣ-Ṣiddīq ؓ</div>
+      <div class="comp-arabic-name">أبو بكر الصديق</div>
+      <div class="comp-rank" style="color:rgba(255,215,0,0.5);">FIRST CALIPH · GREATEST SĀBIQ</div>
+    </div>
+    <div class="comp-arrow">⌄</div>
+  </div>
+  <div class="comp-body">
+    <p class="comp-desc">Abū Bakr ؓ is the pinnacle of the Sābiqūn — the first adult male to embrace Islam, closest companion of the Prophet ﷺ, the man who gave everything without hesitation. He earned the title "aṣ-Ṣiddīq" because when everyone doubted the Night Journey, he believed instantly and completely.</p>
+    <p class="comp-desc">His faith was not in grand gestures alone — it was quiet, unshakeable certainty in every moment. The Prophet ﷺ said his heart outweighed the faith of the entire Ummah. When asked what he left for his family after giving everything to Islam, he said: <em>"Allah and His Messenger."</em></p>
+    <div class="comp-qualities">
+      <div class="comp-q-tag" style="background:rgba(255,215,0,0.08);color:#FFD700;border-color:rgba(255,215,0,0.2);">Complete tawakkul</div>
+      <div class="comp-q-tag" style="background:rgba(255,215,0,0.08);color:#FFD700;border-color:rgba(255,215,0,0.2);">Total sacrifice</div>
+      <div class="comp-q-tag" style="background:rgba(255,215,0,0.08);color:#FFD700;border-color:rgba(255,215,0,0.2);">Ṣiddīqiyyah</div>
+      <div class="comp-q-tag" style="background:rgba(255,215,0,0.08);color:#FFD700;border-color:rgba(255,215,0,0.2);">First to believe</div>
+    </div>
+    <div class="comp-hadith">"If the faith of Abū Bakr were weighed against the faith of the entire Ummah, Abū Bakr's faith would outweigh theirs."<span class="comp-hadith-ref">BAYḤAQĪ — AUTHENTICATED</span></div>
+    <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.65;"><strong style="color:rgba(255,215,0,0.7);">His lesson:</strong> The Sābiqūn do not calculate what they give to Allah. They give first, completely, and trust Allah for everything that follows. His level: Ṣiddīqiyyah — the station above Muḥsineen.</p>
+  </div>
+</div>
+
+<div class="comp-card" id="cp2" onclick="toggleCard('cp2')" style="background:linear-gradient(135deg,rgba(39,174,96,0.07),rgba(14,20,32,0.95));border:1px solid rgba(39,174,96,0.22);animation-delay:.15s;">
+  <div class="comp-header">
+    <div class="comp-avatar" style="background:rgba(39,174,96,0.1);border-color:rgba(39,174,96,0.35);color:#2ecc71;">⚡</div>
+    <div class="comp-info">
+      <div class="comp-name" style="color:#2ecc71;">ʿUmar ibn al-Khaṭṭāb ؓ</div>
+      <div class="comp-arabic-name">عمر بن الخطاب</div>
+      <div class="comp-rank" style="color:rgba(39,174,96,0.5);">SECOND CALIPH · AL-FĀRŪQ</div>
+    </div>
+    <div class="comp-arrow">⌄</div>
+  </div>
+  <div class="comp-body">
+    <p class="comp-desc">ʿUmar ؓ began as one of Islam's fiercest enemies — and became one of its greatest pillars. His conversion was total and public; he walked straight to the Ka'bah and announced his Islam when others hid. Despite being the most powerful ruler of his time, he lived in voluntary poverty.</p>
+    <p class="comp-desc">His taqwā was legendary. He would pray until his legs swelled, weep in prayer fearing his own sins, and walk the streets at night checking on the poor. He held himself to a standard higher than he held others.</p>
+    <div class="comp-qualities">
+      <div class="comp-q-tag" style="background:rgba(39,174,96,0.08);color:#2ecc71;border-color:rgba(39,174,96,0.2);">Fierce taqwā</div>
+      <div class="comp-q-tag" style="background:rgba(39,174,96,0.08);color:#2ecc71;border-color:rgba(39,174,96,0.2);">Self-accountability</div>
+      <div class="comp-q-tag" style="background:rgba(39,174,96,0.08);color:#2ecc71;border-color:rgba(39,174,96,0.2);">Zuhd</div>
+      <div class="comp-q-tag" style="background:rgba(39,174,96,0.08);color:#2ecc71;border-color:rgba(39,174,96,0.2);">Justice</div>
+    </div>
+    <div class="comp-hadith">"Take account of yourselves before you are taken to account. Weigh your deeds before they are weighed for you."<span class="comp-hadith-ref">ʿUMAR ؓ — TIRMIDHĪ</span></div>
+    <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.65;"><strong style="color:rgba(39,174,96,0.7);">His lesson:</strong> Greatness does not mean freedom from fear. ʿUmar wept more than most. The Sābiqūn hold themselves to the highest standard — never assuming they have done enough.</p>
+  </div>
+</div>
+
+<div class="comp-card" id="cp3" onclick="toggleCard('cp3')" style="background:linear-gradient(135deg,rgba(155,89,182,0.07),rgba(14,20,32,0.95));border:1px solid rgba(155,89,182,0.22);animation-delay:.2s;">
+  <div class="comp-header">
+    <div class="comp-avatar" style="background:rgba(155,89,182,0.1);border-color:rgba(155,89,182,0.35);color:#9b59b6;">✦</div>
+    <div class="comp-info">
+      <div class="comp-name" style="color:#9b59b6;">Khadījah bint Khuwaylid ؓ</div>
+      <div class="comp-arabic-name">خديجة بنت خويلد</div>
+      <div class="comp-rank" style="color:rgba(155,89,182,0.5);">MOTHER OF BELIEVERS · FIRST MUSLIM</div>
+    </div>
+    <div class="comp-arrow">⌄</div>
+  </div>
+  <div class="comp-body">
+    <p class="comp-desc">Khadījah ؓ was the very first Muslim — before any man, before any child. When the Prophet ﷺ returned from the cave trembling with fear, she wrapped him, comforted him, and declared with certainty: <em>"By Allah, Allah will never disgrace you."</em> Her faith was instant and total.</p>
+    <p class="comp-desc">She sacrificed her entire enormous wealth for Islam without a second thought. She supported the Prophet ﷺ through the most difficult years. The Prophet ﷺ never forgot her — even years after her death, he would speak of her with immense love and send gifts to her old friends.</p>
+    <div class="comp-qualities">
+      <div class="comp-q-tag" style="background:rgba(155,89,182,0.08);color:#9b59b6;border-color:rgba(155,89,182,0.2);">First believer</div>
+      <div class="comp-q-tag" style="background:rgba(155,89,182,0.08);color:#9b59b6;border-color:rgba(155,89,182,0.2);">Total sacrifice</div>
+      <div class="comp-q-tag" style="background:rgba(155,89,182,0.08);color:#9b59b6;border-color:rgba(155,89,182,0.2);">Greeted in Jannah</div>
+      <div class="comp-q-tag" style="background:rgba(155,89,182,0.08);color:#9b59b6;border-color:rgba(155,89,182,0.2);">Unwavering support</div>
+    </div>
+    <div class="comp-hadith">"Jibrīl came and said: Give Khadījah glad tidings of a house in Paradise made of hollow pearl, wherein there is no noise and no toil."<span class="comp-hadith-ref">BUKHĀRĪ & MUSLIM</span></div>
+    <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.65;"><strong style="color:rgba(155,89,182,0.7);">Her lesson:</strong> The Sābiqūn are not defined by gender or position. They are defined by the moment they choose Allah without hesitation — and the consistency of that choice every day thereafter.</p>
+  </div>
+</div>
+
+<div class="comp-card" id="cp4" onclick="toggleCard('cp4')" style="background:linear-gradient(135deg,rgba(52,152,219,0.07),rgba(14,20,32,0.95));border:1px solid rgba(52,152,219,0.22);animation-delay:.25s;">
+  <div class="comp-header">
+    <div class="comp-avatar" style="background:rgba(52,152,219,0.1);border-color:rgba(52,152,219,0.35);color:#3498db;">🦁</div>
+    <div class="comp-info">
+      <div class="comp-name" style="color:#3498db;">ʿAlī ibn Abī Ṭālib ؓ</div>
+      <div class="comp-arabic-name">علي بن أبي طالب</div>
+      <div class="comp-rank" style="color:rgba(52,152,219,0.5);">FOURTH CALIPH · LION OF ALLAH</div>
+    </div>
+    <div class="comp-arrow">⌄</div>
+  </div>
+  <div class="comp-body">
+    <p class="comp-desc">ʿAlī ؓ accepted Islam as a young boy — the youngest male to do so — and never wavered for a single moment. He was raised in the household of the Prophet ﷺ and absorbed his character, wisdom, and worship directly. His knowledge, courage, and worship were unmatched among the Companions.</p>
+    <p class="comp-desc">He was known for praying throughout the night, trembling in prayer out of awe of Allah, and weeping when dawn came. In battle he was like a lion, but in prayer he was like a humble servant. He gave away so much in charity that he and Fāṭimah ؓ would sometimes go hungry.</p>
+    <div class="comp-qualities">
+      <div class="comp-q-tag" style="background:rgba(52,152,219,0.08);color:#3498db;border-color:rgba(52,152,219,0.2);">Deep knowledge</div>
+      <div class="comp-q-tag" style="background:rgba(52,152,219,0.08);color:#3498db;border-color:rgba(52,152,219,0.2);">Night worship</div>
+      <div class="comp-q-tag" style="background:rgba(52,152,219,0.08);color:#3498db;border-color:rgba(52,152,219,0.2);">Courage</div>
+      <div class="comp-q-tag" style="background:rgba(52,152,219,0.08);color:#3498db;border-color:rgba(52,152,219,0.2);">Generosity</div>
+    </div>
+    <div class="comp-hadith">"I am the city of knowledge and ʿAlī is its gate."<span class="comp-hadith-ref">TIRMIDHĪ</span></div>
+    <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.65;"><strong style="color:rgba(52,152,219,0.7);">His lesson:</strong> The Sābiqūn combine outward strength with inward humility. ʿAlī ؓ was the greatest warrior of his time who wept in the depths of the night before Allah.</p>
+  </div>
+</div>
+
+<div class="comp-card" id="cp5" onclick="toggleCard('cp5')" style="background:linear-gradient(135deg,rgba(230,126,34,0.07),rgba(14,20,32,0.95));border:1px solid rgba(230,126,34,0.22);animation-delay:.3s;">
+  <div class="comp-header">
+    <div class="comp-avatar" style="background:rgba(230,126,34,0.1);border-color:rgba(230,126,34,0.35);color:#e67e22;">📖</div>
+    <div class="comp-info">
+      <div class="comp-name" style="color:#e67e22;">ʿAbdullāh ibn Masʿūd ؓ</div>
+      <div class="comp-arabic-name">عبدالله بن مسعود</div>
+      <div class="comp-rank" style="color:rgba(230,126,34,0.5);">MASTER OF QUR'AN · CLOSEST TO THE PROPHET</div>
+    </div>
+    <div class="comp-arrow">⌄</div>
+  </div>
+  <div class="comp-body">
+    <p class="comp-desc">Ibn Masʿūd ؓ was one of the earliest Muslims and the closest to the Prophet ﷺ in daily company. He was so trusted that he would enter the Prophet's house without knocking. He learned 70 surahs of the Qur'an directly from the Prophet's ﷺ mouth.</p>
+    <p class="comp-desc">Despite being physically small and thin-legged, he had a heart of enormous strength. He was the first to recite Qur'an openly in Makkah when the Companions feared to do so — he was beaten for it and came back the next day. His attachment to the Qur'an was total.</p>
+    <div class="comp-qualities">
+      <div class="comp-q-tag" style="background:rgba(230,126,34,0.08);color:#e67e22;border-color:rgba(230,126,34,0.2);">Qur'an master</div>
+      <div class="comp-q-tag" style="background:rgba(230,126,34,0.08);color:#e67e22;border-color:rgba(230,126,34,0.2);">Courage</div>
+      <div class="comp-q-tag" style="background:rgba(230,126,34,0.08);color:#e67e22;border-color:rgba(230,126,34,0.2);">Closeness to Prophet ﷺ</div>
+      <div class="comp-q-q-tag" style="background:rgba(230,126,34,0.08);color:#e67e22;border-color:rgba(230,126,34,0.2);padding:4px 11px;border-radius:100px;font-size:10px;font-family:'Lato',sans-serif;border:1px solid;">Consistent worship</div>
+    </div>
+    <div class="comp-hadith">"Learn the Qur'an from four: Ibn Masʿūd — and he began with him."<span class="comp-hadith-ref">BUKHĀRĪ — THE PROPHET ﷺ</span></div>
+    <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.65;"><strong style="color:rgba(230,126,34,0.7);">His lesson:</strong> Physical strength means nothing. The Sābiqūn's power comes from their relationship with the Qur'an — the one who carries the Qur'an in their heart carries the greatest treasure.</p>
+  </div>
+</div>
+<div style="margin-bottom:24px;"></div>
+```
+
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <!-- SECTION: SINS -->
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <div class="section" id="sec-sins">
+    <p class="sins-intro">Sins are not just moral failures — they have real spiritual consequences. The Prophet ﷺ described their effect on the heart precisely. Understanding this makes the urgency of tawbah clear.</p>
+    <div class="divider"></div>
+
+```
+<div style="background:rgba(192,57,43,0.05);border:1px solid rgba(192,57,43,0.2);border-radius:16px;padding:16px 18px;margin-bottom:18px;">
+  <div class="arabic-sm">إِنَّ الْعَبْدَ إِذَا أَذْنَبَ ذَنْبًا نُكِتَ فِي قَلْبِهِ نُكْتَةٌ سَوْدَاءُ</div>
+  <p style="font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:rgba(232,224,208,0.72);line-height:1.75;margin-top:8px;">"When a servant commits a sin, a black dot is placed on his heart. If he repents and seeks forgiveness, his heart is polished. But if he returns to sin, the dots increase until his heart is completely covered — and that is the 'ran' (covering) that Allah mentions: 'No! Rather, on their hearts is the ran of what they used to earn.'" (83:14)</p>
+  <span style="font-size:10px;color:rgba(192,57,43,0.6);letter-spacing:2px;display:block;margin-top:8px;font-family:'Lato',sans-serif;">TIRMIDHĪ — AUTHENTICATED</span>
+</div>
+
+<div class="sin-card" id="sn1" onclick="toggleCard('sn1')" style="background:linear-gradient(135deg,rgba(192,57,43,0.07),rgba(14,20,32,0.95));border:1px solid rgba(192,57,43,0.22);animation-delay:.1s;">
+  <div class="sin-header">
+    <div class="sin-icon" style="background:rgba(192,57,43,0.1);border:1px solid rgba(192,57,43,0.25);">🖤</div>
+    <div class="sin-label">
+      <div class="sin-title" style="color:#e74c3c;">The Black Dot — Effect on the Heart</div>
+      <div class="sin-sub">THE CORE MECHANISM</div>
+    </div>
+    <div class="sin-arrow">⌄</div>
+  </div>
+  <div class="sin-body">
+    <p class="sin-desc">Every sin leaves a mark. The Qur'an and Sunnah describe this as a literal darkening of the heart — a spiritual stain that accumulates with each sin and is removed by tawbah. This is not metaphor — it is the spiritual reality of disobedience.</p>
+    <div class="sin-effects">
+      <div class="sin-effect"><span class="sin-effect-icon">◌</span><span class="sin-effect-text">First sin: one black dot — heart still mostly pure</span></div>
+      <div class="sin-effect"><span class="sin-effect-icon">◌</span><span class="sin-effect-text">Repeated sin without tawbah: dots multiply, heart darkens</span></div>
+      <div class="sin-effect"><span class="sin-effect-icon">◌</span><span class="sin-effect-text">Persistent sin: the "ran" — a complete covering of the heart</span></div>
+      <div class="sin-effect"><span class="sin-effect-icon">◌</span><span class="sin-effect-text">Covered heart: can no longer distinguish truth from falsehood</span></div>
+    </div>
+    <div class="sin-hadith">"No! Rather, on their hearts is the ran of what they used to earn."<span class="sin-hadith-ref">QUR'AN 83:14</span></div>
+    <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.6;">The good news: Tawbah polishes the heart. Every sincere repentance removes the dot. This is why the Sābiqūn do not persist in sin — they understand the stakes.</p>
+  </div>
+</div>
+
+<div class="sin-card" id="sn2" onclick="toggleCard('sn2')" style="background:linear-gradient(135deg,rgba(108,52,131,0.07),rgba(14,20,32,0.95));border:1px solid rgba(108,52,131,0.22);animation-delay:.15s;">
+  <div class="sin-header">
+    <div class="sin-icon" style="background:rgba(108,52,131,0.1);border:1px solid rgba(108,52,131,0.25);">⚖️</div>
+    <div class="sin-label">
+      <div class="sin-title" style="color:#9b59b6;">Minor vs Major Sins</div>
+      <div class="sin-sub">AL-ṢAGHĀ'IR & AL-KABĀ'IR</div>
+    </div>
+    <div class="sin-arrow">⌄</div>
+  </div>
+  <div class="sin-body">
+    <p class="sin-desc">Scholars divide sins into minor (ṣaghā'ir) and major (kabā'ir). The distinction matters — not to justify any sin, but to understand the seriousness of what we do and the mercy Allah has built into the system.</p>
+    <div class="sin-hadith">"The five daily prayers, Jumu'ah to Jumu'ah, and Ramaḍān to Ramaḍān are expiations for what comes between them, as long as major sins are avoided."<span class="sin-hadith-ref">MUSLIM</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+      <div style="padding:12px;background:rgba(255,215,0,0.04);border:1px solid rgba(255,215,0,0.12);border-radius:12px;">
+        <div style="font-size:10px;font-family:'Cinzel',serif;color:var(--gold-dim);letter-spacing:1.5px;margin-bottom:8px;">MINOR SINS</div>
+        <div style="font-size:12px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.6;">Expiated by: prayer, wuḍū', good deeds, avoiding major sins</div>
+      </div>
+      <div style="padding:12px;background:rgba(192,57,43,0.04);border:1px solid rgba(192,57,43,0.12);border-radius:12px;">
+        <div style="font-size:10px;font-family:'Cinzel',serif;color:rgba(192,57,43,0.6);letter-spacing:1.5px;margin-bottom:8px;">MAJOR SINS</div>
+        <div style="font-size:12px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.6;">Require sincere tawbah — not just routine good deeds</div>
+      </div>
+    </div>
+    <div style="font-size:11px;font-family:'Cinzel',serif;color:var(--text-dim);letter-spacing:1.5px;margin-bottom:8px;">THE SEVEN MAJOR SINS (AL-SABʿ AL-MŪBIQĀT):</div>
+    <div class="sin-effects">
+      <div class="sin-effect"><span class="sin-effect-icon" style="color:#9b59b6;">◌</span><span class="sin-effect-text">Shirk — associating partners with Allah</span></div>
+      <div class="sin-effect"><span class="sin-effect-icon" style="color:#9b59b6;">◌</span><span class="sin-effect-text">Magic (siḥr)</span></div>
+      <div class="sin-effect"><span class="sin-effect-icon" style="color:#9b59b6;">◌</span><span class="sin-effect-text">Killing an innocent soul unjustly</span></div>
+      <div class="sin-effect"><span class="sin-effect-icon" style="color:#9b59b6;">◌</span><span class="sin-effect-text">Consuming ribā (interest)</span></div>
+      <div class="sin-effect"><span class="sin-effect-icon" style="color:#9b59b6;">◌</span><span class="sin-effect-text">Consuming the wealth of orphans</span></div>
+      <div class="sin-effect"><span class="sin-effect-icon" style="color:#9b59b6;">◌</span><span class="sin-effect-text">Fleeing from the battlefield</span></div>
+      <div class="sin-effect"><span class="sin-effect-icon" style="color:#9b59b6;">◌</span><span class="sin-effect-text">Slandering chaste believing women</span></div>
+    </div>
+    <div class="sin-hadith">"Avoid the seven destroyers..." and he listed them.<span class="sin-hadith-ref">BUKHĀRĪ & MUSLIM</span></div>
+  </div>
+</div>
+
+<div class="sin-card" id="sn3" onclick="toggleCard('sn3')" style="background:linear-gradient(135deg,rgba(41,128,185,0.07),rgba(14,20,32,0.95));border:1px solid rgba(41,128,185,0.22);animation-delay:.2s;">
+  <div class="sin-header">
+    <div class="sin-icon" style="background:rgba(41,128,185,0.1);border:1px solid rgba(41,128,185,0.25);">🌊</div>
+    <div class="sin-label">
+      <div class="sin-title" style="color:#3498db;">Sins of the Tongue</div>
+      <div class="sin-sub">THE MOST DANGEROUS ORGAN</div>
+    </div>
+    <div class="sin-arrow">⌄</div>
+  </div>
+  <div class="sin-body">
+    <p class="sin-desc">The Prophet ﷺ warned extensively about the tongue. More people will enter Hell because of their tongues than almost any other cause. The Sābiqūn guard their speech with exceptional care.</p>
+    <div class="sin-hadith">"A man utters a word pleasing to Allah without considering it of any significance, for which Allah exalts his ranks. And a man utters a word displeasing to Allah without considering it of any significance, which causes him to sink into Hell."<span class="sin-hadith-ref">BUKHĀRĪ</span></div>
+    <div class="sin-effects">
+      <div class="sin-effect"><span class="sin-effect-icon" style="color:#3498db;">◌</span><span class="sin-effect-text"><strong style="color:rgba(255,255,255,0.7);">Ghība (backbiting)</strong> — mentioned as eating your dead brother's flesh (49:12)</span></div>
+      <div class="sin-effect"><span class="sin-effect-icon" style="color:#3498db;">◌</span><span class="sin-effect-text"><strong style="color:rgba(255,255,255,0.7);">Namīmah (gossip)</strong> — causes grave punishment; destroyed by the Prophet ﷺ</span></div>
+      <div class="sin-effect"><span class="sin-effect-icon" style="color:#3498db;">◌</span><span class="sin-effect-text"><strong style="color:rgba(255,255,255,0.7);">Lying</strong> — leads to wickedness, which leads to Hell (Bukhārī)</span></div>
+      <div class="sin-effect"><span class="sin-effect-icon" style="color:#3498db;">◌</span><span class="sin-effect-text"><strong style="color:rgba(255,255,255,0.7);">Mockery</strong> — forbidden by the Qur'an (49:11)</span></div>
+    </div>
+    <div class="sin-hadith">"Whoever guarantees me what is between his jaws and what is between his legs, I will guarantee him Paradise."<span class="sin-hadith-ref">BUKHĀRĪ</span></div>
+  </div>
+</div>
+
+<div class="sin-card" id="sn4" onclick="toggleCard('sn4')" style="background:linear-gradient(135deg,rgba(243,156,18,0.07),rgba(14,20,32,0.95));border:1px solid rgba(243,156,18,0.22);animation-delay:.25s;">
+  <div class="sin-header">
+    <div class="sin-icon" style="background:rgba(243,156,18,0.1);border:1px solid rgba(243,156,18,0.25);">👁️</div>
+    <div class="sin-label">
+      <div class="sin-title" style="color:#f39c12;">Sins of the Eyes & Private Parts</div>
+      <div class="sin-sub">THE GATEWAYS TO THE HEART</div>
+    </div>
+    <div class="sin-arrow">⌄</div>
+  </div>
+  <div class="sin-body">
+    <p class="sin-desc">The eyes and private parts are among the most dangerous sources of sin. What enters through the eyes plants seeds in the heart. The Prophet ﷺ described the eyes, ears, hands, and feet as all having their own "zinā" (adultery) — meaning any use of the body for ḥarām is a form of transgression.</p>
+    <div class="sin-hadith">"The adultery of the eyes is looking, the adultery of the ears is listening, the adultery of the tongue is speaking, the adultery of the hands is touching, the adultery of the feet is walking — and the heart desires and wishes."<span class="sin-hadith-ref">BUKHĀRĪ & MUSLIM</span></div>
+    <div class="sin-effects">
+      <div class="sin-effect"><span class="sin-effect-icon" style="color:#f39c12;">◌</span><span class="sin-effect-text">Unlowered gaze accumulates darkness in the heart gradually</span></div>
+      <div class="sin-effect"><span class="sin-effect-icon" style="color:#f39c12;">◌</span><span class="sin-effect-text">Acts of zinā destroy spiritual light and cause deep shame before Allah</span></div>
+      <div class="sin-effect"><span class="sin-effect-icon" style="color:#f39c12;">◌</span><span class="sin-effect-text">These sins are connected — small concessions lead to greater falls</span></div>
+    </div>
+    <p style="font-size:13px;color:var(--text-dim);font-family:'EB Garamond',serif;line-height:1.6;">The Sābiqūn protect all the gates to their heart. They know that a single lingering gaze is a seed that can grow into something that distances them from Allah.</p>
+  </div>
+</div>
+
+<div class="sin-card" id="sn5" onclick="toggleCard('sn5')" style="background:linear-gradient(135deg,rgba(39,174,96,0.07),rgba(14,20,32,0.95));border:1px solid rgba(39,174,96,0.22);animation-delay:.3s;">
+  <div class="sin-header">
+    <div class="sin-icon" style="background:rgba(39,174,96,0.1);border:1px solid rgba(39,174,96,0.25);">💧</div>
+    <div class="sin-label">
+      <div class="sin-title" style="color:#2ecc71;">The Way Out — Tawbah & Kaffārah</div>
+      <div class="sin-sub">EVERY SIN HAS A CURE</div>
+    </div>
+    <div class="sin-arrow">⌄</div>
+  </div>
+  <div class="sin-body">
+    <p class="sin-desc">No matter how great the sin, the door of tawbah is open. Allah has built a complete system of expiation and forgiveness. The sin is not the final word — the response to it is.</p>
+    <div class="sin-effects" style="background:transparent;">
+      <div class="sin-effect" style="background:rgba(39,174,96,0.05);border-color:rgba(39,174,96,0.15);"><span class="sin-effect-icon" style="color:#2ecc71;">✦</span><span class="sin-effect-text"><strong style="color:rgba(255,255,255,0.7);">Tawbah</strong> — remorse + stopping + not returning. Wipes the sin entirely</span></div>
+      <div class="sin-effect" style="background:rgba(39,174,96,0.05);border-color:rgba(39,174,96,0.15);"><span class="sin-effect-icon" style="color:#2ecc71;">✦</span><span class="sin-effect-text"><strong style="color:rgba(255,255,255,0.7);">Good deeds</strong> — "Indeed, good deeds remove evil deeds." (11:114)</span></div>
+      <div class="sin-effect" style="background:rgba(39,174,96,0.05);border-color:rgba(39,174,96,0.15);"><span class="sin-effect-icon" style="color:#2ecc71;">✦</span><span class="sin-effect-text"><strong style="color:rgba(255,255,255,0.7);">Trials</strong> — suffering in this world expiates sins (Bukhārī & Muslim)</span></div>
+      <div class="sin-effect" style="background:rgba(39,174,96,0.05);border-color:rgba(39,174,96,0.15);"><span class="sin-effect-icon" style="color:#2ecc71;">✦</span><span class="sin-effect-text"><strong style="color:rgba(255,255,255,0.7);">Allah's pure mercy</strong> — He may forgive without any of the above</span></div>
+    </div>
+    <div class="sin-hadith">"O son of Adam, if your sins were to reach the clouds of the sky and then you sought My forgiveness, I would forgive you."<span class="sin-hadith-ref">ḤADĪTH QUDSĪ — TIRMIDHĪ</span></div>
+  </div>
+</div>
+<div style="margin-bottom:24px;"></div>
+```
+
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <!-- SECTION: DUA -->
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <div class="section" id="sec-dua">
+    <p class="dua-intro">These are authenticated du'ās from the Qur'an and Sunnah — selected specifically for each spiritual level and need. The Prophet ﷺ taught these words precisely because they work.</p>
+    <div class="divider"></div>
+
+```
+<div class="dua-level-label" style="color:rgba(192,57,43,0.7);">FOR THE STRUGGLING BELIEVER — ZĀLIM LI-NAFSIH</div>
+
+<div class="dua-card" id="du1" onclick="toggleCard('du1')" style="background:linear-gradient(135deg,rgba(192,57,43,0.06),rgba(14,20,32,0.95));border:1px solid rgba(192,57,43,0.2);animation-delay:.1s;">
+  <div class="dua-header">
+    <div class="dua-num" style="background:rgba(192,57,43,0.1);border:1px solid rgba(192,57,43,0.25);color:#e74c3c;">1</div>
+    <div class="dua-label">
+      <div class="dua-title" style="color:#e74c3c;">Sayyid al-Istighfār — The Master of Forgiveness</div>
+      <div class="dua-purpose">FOR SEEKING FORGIVENESS DEEPLY</div>
+    </div>
+    <div class="dua-arrow">⌄</div>
+  </div>
+  <div class="dua-body">
+    <div class="dua-arabic">اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ بِذَنْبِي، فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ</div>
+    <div class="dua-transliteration">Allāhumma Anta Rabbī lā ilāha illā Ant, khalaqtanī wa anā 'abduk, wa anā 'alā 'ahdika wa wa'dika mastaṭa't, a'ūdhu bika min sharri mā ṣana't, abū'u laka bini'matika 'alayya wa abū'u bidhanbī, faghfir lī fa'innahu lā yaghfiru adh-dhunūba illā Ant.</div>
+    <div class="dua-translation">"O Allah, You are my Lord. There is no god but You. You created me and I am Your servant. I am upon Your covenant and promise as best I can. I seek refuge in You from the evil of what I have done. I acknowledge Your favour upon me and I confess my sin. So forgive me, for none forgives sins except You."</div>
+    <p class="dua-context">The Prophet ﷺ said: "Whoever says this with certainty in the evening and dies before morning will be among the people of Paradise. And whoever says it with certainty in the morning and dies before evening will be among the people of Paradise." Recite morning and evening.</p>
+    <div class="dua-source">BUKHĀRĪ</div>
+  </div>
+</div>
+
+<div class="dua-card" id="du2" onclick="toggleCard('du2')" style="background:linear-gradient(135deg,rgba(192,57,43,0.06),rgba(14,20,32,0.95));border:1px solid rgba(192,57,43,0.18);animation-delay:.15s;">
+  <div class="dua-header">
+    <div class="dua-num" style="background:rgba(192,57,43,0.1);border:1px solid rgba(192,57,43,0.22);color:#e74c3c;">2</div>
+    <div class="dua-label">
+      <div class="dua-title" style="color:#e74c3c;">Du'ā of Ādam ﷺ & Ḥawwā</div>
+      <div class="dua-purpose">FOR WHEN YOU HAVE WRONGED YOURSELF</div>
+    </div>
+    <div class="dua-arrow">⌄</div>
+  </div>
+  <div class="dua-body">
+    <div class="dua-arabic">رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ</div>
+    <div class="dua-transliteration">Rabbanā ẓalamnā anfusanā wa in lam taghfir lanā wa tarḥamnā lanakūnanna minal-khāsirīn.</div>
+    <div class="dua-translation">"Our Lord, we have wronged ourselves. If You do not forgive us and have mercy on us, we will surely be among the losers."</div>
+    <p class="dua-context">This is the du'ā Allah Himself taught Ādam ﷺ and Ḥawwā when they were expelled from Paradise. It is the most honest acknowledgment of one's state — and Allah accepted it immediately. Use it whenever you feel you have sinned and need to return.</p>
+    <div class="dua-source">QUR'AN 7:23</div>
+  </div>
+</div>
+
+<div class="dua-level-label" style="color:rgba(230,126,34,0.7);margin-top:8px;">FOR THE BALANCED BELIEVER — MUQTAṢID</div>
+
+<div class="dua-card" id="du3" onclick="toggleCard('du3')" style="background:linear-gradient(135deg,rgba(230,126,34,0.06),rgba(14,20,32,0.95));border:1px solid rgba(230,126,34,0.2);animation-delay:.1s;">
+  <div class="dua-header">
+    <div class="dua-num" style="background:rgba(230,126,34,0.1);border:1px solid rgba(230,126,34,0.25);color:#e67e22;">3</div>
+    <div class="dua-label">
+      <div class="dua-title" style="color:#e67e22;">Du'ā for Steadfastness on the Path</div>
+      <div class="dua-purpose">FOR STAYING CONSISTENT</div>
+    </div>
+    <div class="dua-arrow">⌄</div>
+  </div>
+  <div class="dua-body">
+    <div class="dua-arabic">يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِكَ</div>
+    <div class="dua-transliteration">Yā Muqallib al-qulūb, thabbit qalbī 'alā dīnik.</div>
+    <div class="dua-translation">"O Turner of the hearts, keep my heart firm upon Your religion."</div>
+    <p class="dua-context">The Prophet ﷺ used to say this du'ā frequently. He explained: "The hearts are between two fingers of the fingers of the Most Merciful — He turns them however He wills." This du'ā acknowledges that steadfastness is a gift from Allah, not a personal achievement — and asks Him for it directly.</p>
+    <div class="dua-source">TIRMIDHĪ — AUTHENTICATED</div>
+  </div>
+</div>
+
+<div class="dua-card" id="du4" onclick="toggleCard('du4')" style="background:linear-gradient(135deg,rgba(230,126,34,0.06),rgba(14,20,32,0.95));border:1px solid rgba(230,126,34,0.18);animation-delay:.15s;">
+  <div class="dua-header">
+    <div class="dua-num" style="background:rgba(230,126,34,0.1);border:1px solid rgba(230,126,34,0.22);color:#e67e22;">4</div>
+    <div class="dua-label">
+      <div class="dua-title" style="color:#e67e22;">Du'ā for Good in Both Worlds</div>
+      <div class="dua-purpose">THE COMPREHENSIVE DU'Ā</div>
+    </div>
+    <div class="dua-arrow">⌄</div>
+  </div>
+  <div class="dua-body">
+    <div class="dua-arabic">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</div>
+    <div class="dua-transliteration">Rabbanā ātinā fid-dunyā ḥasanatan wa fil-ākhirati ḥasanatan wa qinā 'adhāban-nār.</div>
+    <div class="dua-translation">"Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire."</div>
+    <p class="dua-context">The Prophet ﷺ used to make this du'ā constantly. Anas ؓ said it was the du'ā the Prophet ﷺ made most frequently. Scholars say it contains all good — good in this life includes health, righteous family, beneficial knowledge, and halāl provision. Good in the Hereafter is Jannah and Allah's pleasure.</p>
+    <div class="dua-source">QUR'AN 2:201 — BUKHĀRĪ & MUSLIM</div>
+  </div>
+</div>
+
+<div class="dua-level-label" style="color:rgba(255,215,0,0.6);margin-top:8px;">FOR THE FOREMOST — SĀBIQŪN</div>
+
+<div class="dua-card" id="du5" onclick="toggleCard('du5')" style="background:linear-gradient(135deg,rgba(255,215,0,0.06),rgba(14,20,32,0.95));border:1px solid rgba(255,215,0,0.2);animation-delay:.1s;">
+  <div class="dua-header">
+    <div class="dua-num" style="background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.25);color:#FFD700;">5</div>
+    <div class="dua-label">
+      <div class="dua-title" style="color:#FFD700;">Du'ā of Mūsā ﷺ — Complete Dependence</div>
+      <div class="dua-purpose">FOR TOTAL RELIANCE ON ALLAH</div>
+    </div>
+    <div class="dua-arrow">⌄</div>
+  </div>
+  <div class="dua-body">
+    <div class="dua-arabic">رَبِّ إِنِّي لِمَا أَنزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ</div>
+    <div class="dua-transliteration">Rabbi innī limā anzalta ilayya min khayrin faqīr.</div>
+    <div class="dua-translation">"My Lord, I am in absolute need of whatever good You send down to me."</div>
+    <p class="dua-context">Prophet Mūsā ﷺ said this when he was alone, exhausted, and had nothing. Allah answered it and changed his entire life. This is the du'ā of complete surrender — acknowledging that all good comes only from Allah. The Sābiqūn live in this state of perpetual need of Allah (faqr ilallāh).</p>
+    <div class="dua-source">QUR'AN 28:24</div>
+  </div>
+</div>
+
+<div class="dua-card" id="du6" onclick="toggleCard('du6')" style="background:linear-gradient(135deg,rgba(255,215,0,0.06),rgba(14,20,32,0.95));border:1px solid rgba(255,215,0,0.18);animation-delay:.15s;">
+  <div class="dua-header">
+    <div class="dua-num" style="background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.22);color:#FFD700;">6</div>
+    <div class="dua-label">
+      <div class="dua-title" style="color:#FFD700;">Du'ā for the Highest Levels of Jannah</div>
+      <div class="dua-purpose">THE DU'Ā OF THE SĀBIQŪN</div>
+    </div>
+    <div class="dua-arrow">⌄</div>
+  </div>
+  <div class="dua-body">
+    <div class="dua-arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ الْفِرْدَوْسَ الْأَعْلَى</div>
+    <div class="dua-transliteration">Allāhumma innī as'aluka al-Firdaws al-a'lā.</div>
+    <div class="dua-translation">"O Allah, I ask You for the highest Paradise — Al-Firdaws."</div>
+    <p class="dua-context">The Prophet ﷺ said: "When you ask Allah, ask Him for Al-Firdaws, for it is the highest of Paradise, the middle of Paradise, and from it flow the rivers of Paradise, and above it is the Throne of the Most Merciful." Ask for the highest — Allah loves ambition in du'ā.</p>
+    <div class="dua-source">BUKHĀRĪ</div>
+  </div>
+</div>
+
+<div class="dua-card" id="du7" onclick="toggleCard('du7')" style="background:linear-gradient(135deg,rgba(255,215,0,0.06),rgba(14,20,32,0.95));border:1px solid rgba(255,215,0,0.18);animation-delay:.2s;">
+  <div class="dua-header">
+    <div class="dua-num" style="background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.22);color:#FFD700;">7</div>
+    <div class="dua-label">
+      <div class="dua-title" style="color:#FFD700;">Du'ā for Love of Allah & What He Loves</div>
+      <div class="dua-purpose">FOR ALIGNING THE HEART WITH ALLAH</div>
+    </div>
+    <div class="dua-arrow">⌄</div>
+  </div>
+  <div class="dua-body">
+    <div class="dua-arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ حُبَّكَ وَحُبَّ مَنْ يُحِبُّكَ وَحُبَّ عَمَلٍ يُقَرِّبُنِي إِلَى حُبِّكَ</div>
+    <div class="dua-transliteration">Allāhumma innī as'aluka ḥubbaka wa ḥubba man yuḥibbuk, wa ḥubba 'amalin yuqarribunī ilā ḥubbik.</div>
+    <div class="dua-translation">"O Allah, I ask You for Your love, the love of those who love You, and the love of deeds that will bring me closer to Your love."</div>
+    <p class="dua-context">The Prophet ﷺ taught this du'ā to Muʿādh ibn Jabal ؓ and told him: "By Allah, I love you, O Muʿādh — so do not ever forget to say after every prayer: O Allah, help me to remember You, to be grateful to You, and to worship You in the best manner." This du'ā is the heart of the Sābiqūn — asking not just for deeds, but for the love that makes every deed light and joyful.</p>
+    <div class="dua-source">TIRMIDHĪ — AUTHENTICATED</div>
+  </div>
+</div>
+
+<div class="dua-card" id="du8" onclick="toggleCard('du8')" style="background:linear-gradient(135deg,rgba(255,215,0,0.06),rgba(14,20,32,0.95));border:1px solid rgba(255,215,0,0.18);animation-delay:.25s;">
+  <div class="dua-header">
+    <div class="dua-num" style="background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.22);color:#FFD700;">8</div>
+    <div class="dua-label">
+      <div class="dua-title" style="color:#FFD700;">Du'ā of Sulaymān ﷺ — Gratitude & Righteous Deeds</div>
+      <div class="dua-purpose">FOR GRATITUDE AND RIGHTEOUS OFFSPRING</div>
+    </div>
+    <div class="dua-arrow">⌄</div>
+  </div>
+  <div class="dua-body">
+    <div class="dua-arabic">رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَىٰ وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ وَأَدْخِلْنِي بِرَحْمَتِكَ فِي عِبَادِكَ الصَّالِحِينَ</div>
+    <div class="dua-transliteration">Rabbi awzi'nī an ashkura ni'matakal-latī an'amta 'alayya wa 'alā wālidayya wa an a'mala ṣāliḥan tarḍāh, wa adkhilnī bi-raḥmatika fī 'ibādika aṣ-ṣāliḥīn.</div>
+    <div class="dua-translation">"My Lord, inspire me to be grateful for Your favour which You have bestowed upon me and upon my parents, to do righteousness of which You approve, and admit me by Your mercy into the ranks of Your righteous servants."</div>
+    <p class="dua-context">This is the du'ā of Prophet Sulaymān ﷺ — a Prophet and King — who despite having everything still asked to be admitted among the righteous. It beautifully combines three requests: gratitude, righteous deeds that please Allah, and entry into the company of the righteous.</p>
+    <div class="dua-source">QUR'AN 27:19</div>
+  </div>
+</div>
+<div style="margin-bottom:24px;"></div>
 ```
 
   </div>
